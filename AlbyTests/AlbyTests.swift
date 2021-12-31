@@ -11,8 +11,12 @@ class AlbyTests: XCTestCase {
     override func tearDownWithError() throws {
     }
 
-    func testExample() throws {
+    func testSeek() throws {
         XCTAssertTrue(alby.seek())
+    }
+
+    func testInstall() throws {
+        XCTAssertNoThrow(try alby.install())
     }
 
     func testPerformanceExample() throws {
