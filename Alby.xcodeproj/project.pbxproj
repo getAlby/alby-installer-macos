@@ -7,23 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C0CF4DF277C9BCE000DB6E3 /* AlbyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0CF4DE277C9BCE000DB6E3 /* AlbyApp.swift */; };
+		4C0CF4DF277C9BCE000DB6E3 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0CF4DE277C9BCE000DB6E3 /* App.swift */; };
 		4C0CF4E1277C9BCE000DB6E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0CF4E0277C9BCE000DB6E3 /* ContentView.swift */; };
 		4C0CF4E3277C9BD2000DB6E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C0CF4E2277C9BD2000DB6E3 /* Assets.xcassets */; };
 		4C0CF4E6277C9BD2000DB6E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C0CF4E5277C9BD2000DB6E3 /* Preview Assets.xcassets */; };
+		4C45E960277F6578000A394F /* AlbyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C45E95F277F6578000A394F /* AlbyTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C45E961277F6578000A394F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C0CF4D3277C9BCD000DB6E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C0CF4DA277C9BCE000DB6E3;
+			remoteInfo = Alby;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4C0CF4DB277C9BCE000DB6E3 /* Alby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alby.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C0CF4DE277C9BCE000DB6E3 /* AlbyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbyApp.swift; sourceTree = "<group>"; };
+		4C0CF4DE277C9BCE000DB6E3 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		4C0CF4E0277C9BCE000DB6E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4C0CF4E2277C9BD2000DB6E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C0CF4E5277C9BD2000DB6E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4C0CF4E7277C9BD2000DB6E3 /* Alby.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Alby.entitlements; sourceTree = "<group>"; };
+		4C45E95D277F6578000A394F /* AlbyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C45E95F277F6578000A394F /* AlbyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbyTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4C0CF4D8277C9BCE000DB6E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C45E95A277F6578000A394F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				4C0CF4DD277C9BCE000DB6E3 /* Alby */,
+				4C45E95E277F6578000A394F /* AlbyTests */,
 				4C0CF4DC277C9BCE000DB6E3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				4C0CF4DB277C9BCE000DB6E3 /* Alby.app */,
+				4C45E95D277F6578000A394F /* AlbyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,7 +74,7 @@
 		4C0CF4DD277C9BCE000DB6E3 /* Alby */ = {
 			isa = PBXGroup;
 			children = (
-				4C0CF4DE277C9BCE000DB6E3 /* AlbyApp.swift */,
+				4C0CF4DE277C9BCE000DB6E3 /* App.swift */,
 				4C0CF4E0277C9BCE000DB6E3 /* ContentView.swift */,
 				4C0CF4E2277C9BD2000DB6E3 /* Assets.xcassets */,
 				4C0CF4E7277C9BD2000DB6E3 /* Alby.entitlements */,
@@ -67,6 +89,14 @@
 				4C0CF4E5277C9BD2000DB6E3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4C45E95E277F6578000A394F /* AlbyTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C45E95F277F6578000A394F /* AlbyTests.swift */,
+			);
+			path = AlbyTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,6 +119,24 @@
 			productReference = 4C0CF4DB277C9BCE000DB6E3 /* Alby.app */;
 			productType = "com.apple.product-type.application";
 		};
+		4C45E95C277F6578000A394F /* AlbyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C45E963277F6578000A394F /* Build configuration list for PBXNativeTarget "AlbyTests" */;
+			buildPhases = (
+				4C45E959277F6578000A394F /* Sources */,
+				4C45E95A277F6578000A394F /* Frameworks */,
+				4C45E95B277F6578000A394F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C45E962277F6578000A394F /* PBXTargetDependency */,
+			);
+			name = AlbyTests;
+			productName = AlbyTests;
+			productReference = 4C45E95D277F6578000A394F /* AlbyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -101,6 +149,10 @@
 				TargetAttributes = {
 					4C0CF4DA277C9BCE000DB6E3 = {
 						CreatedOnToolsVersion = 13.2;
+					};
+					4C45E95C277F6578000A394F = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 4C0CF4DA277C9BCE000DB6E3;
 					};
 				};
 			};
@@ -118,6 +170,7 @@
 			projectRoot = "";
 			targets = (
 				4C0CF4DA277C9BCE000DB6E3 /* Alby */,
+				4C45E95C277F6578000A394F /* AlbyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -132,6 +185,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4C45E95B277F6578000A394F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,11 +200,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C0CF4E1277C9BCE000DB6E3 /* ContentView.swift in Sources */,
-				4C0CF4DF277C9BCE000DB6E3 /* AlbyApp.swift in Sources */,
+				4C0CF4DF277C9BCE000DB6E3 /* App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C45E959277F6578000A394F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C45E960277F6578000A394F /* AlbyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C45E962277F6578000A394F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C0CF4DA277C9BCE000DB6E3 /* Alby */;
+			targetProxy = 4C45E961277F6578000A394F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		4C0CF4E8277C9BD2000DB6E3 /* Debug */ = {
@@ -198,7 +274,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -253,7 +329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -312,6 +388,40 @@
 			};
 			name = Release;
 		};
+		4C45E964277F6578000A394F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.getalby.AlbyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Alby.app/Contents/MacOS/Alby";
+			};
+			name = Debug;
+		};
+		4C45E965277F6578000A394F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.getalby.AlbyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Alby.app/Contents/MacOS/Alby";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -329,6 +439,15 @@
 			buildConfigurations = (
 				4C0CF4EB277C9BD2000DB6E3 /* Debug */,
 				4C0CF4EC277C9BD2000DB6E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C45E963277F6578000A394F /* Build configuration list for PBXNativeTarget "AlbyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C45E964277F6578000A394F /* Debug */,
+				4C45E965277F6578000A394F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
