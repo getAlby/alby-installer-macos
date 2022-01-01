@@ -1,4 +1,4 @@
-//  Built by Manuel @StuFFmc Carrasco Molina on New year's Eve 2021
+//  Built by Manuel @StuFFmc Carrasco Molina on New year's Eve 2021 / January 2022
 import SwiftUI
 
 @main
@@ -11,7 +11,7 @@ struct Window: App {
         WindowGroup {
             Group {
                 if loaded {
-                    Button("Install") {
+                    Button("Install JSON") {
                         do {
                             try alby.install()
                         } catch {
@@ -25,7 +25,7 @@ struct Window: App {
             .alert(isPresented: .constant(localizedError?.isEmpty == false)) {
                 Alert(title: Text(localizedError!))
             }
-            .frame(width: 800, height: 600)
+            .frame(width: 640, height: 480)
             .onAppear {
                 loaded = alby.seek()
             }
@@ -46,15 +46,23 @@ struct Alby {
     }
     """
 
-    private var path: String {
-        "/Users/\(NSUserName())/Library/Application Support/Mozilla/NativeMessagingHosts"
+    var nativeMessagingURL: URL {
+        appSupportURL.appendingPathComponent("Mozilla/NativeMessagingHosts")
+    }
+
+    var albyJsonURL: URL {
+        nativeMessagingURL.appendingPathComponent("alby").appendingPathExtension("json")
+    }
+
+    private var appSupportURL: URL {
+        fm.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
     }
 
     func seek() -> Bool {
-        fm.fileExists(atPath: path)
+        fm.fileExists(atPath: nativeMessagingURL.path)
     }
 
     func install() throws {
-        try json.write(to: URL(fileURLWithPath: path).appendingPathComponent("alby").appendingPathExtension("json"), atomically: true, encoding: .ascii)
+        try json.write(to: albyJsonURL, atomically: true, encoding: .ascii)
     }
 }

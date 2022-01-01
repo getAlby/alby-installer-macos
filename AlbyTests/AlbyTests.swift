@@ -17,6 +17,7 @@ class AlbyTests: XCTestCase {
 
     func testInstall() throws {
         XCTAssertNoThrow(try alby.install())
+        try! FileManager.default.removeItem(at: alby.albyJsonURL)
     }
 
     func testPerformanceExample() throws {
