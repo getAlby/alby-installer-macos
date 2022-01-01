@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4C0CF4DF277C9BCE000DB6E3 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0CF4DE277C9BCE000DB6E3 /* App.swift */; };
-		4C0CF4E1277C9BCE000DB6E3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0CF4E0277C9BCE000DB6E3 /* ContentView.swift */; };
 		4C0CF4E3277C9BD2000DB6E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C0CF4E2277C9BD2000DB6E3 /* Assets.xcassets */; };
-		4C0CF4E6277C9BD2000DB6E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C0CF4E5277C9BD2000DB6E3 /* Preview Assets.xcassets */; };
-		4C45E960277F6578000A394F /* AlbyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C45E95F277F6578000A394F /* AlbyTests.swift */; };
+		4C45E9672780F1E0000A394F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C45E95F277F6578000A394F /* Tests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,11 +25,9 @@
 /* Begin PBXFileReference section */
 		4C0CF4DB277C9BCE000DB6E3 /* Alby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0CF4DE277C9BCE000DB6E3 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		4C0CF4E0277C9BCE000DB6E3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4C0CF4E2277C9BD2000DB6E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4C0CF4E5277C9BD2000DB6E3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4C45E95D277F6578000A394F /* AlbyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C45E95F277F6578000A394F /* AlbyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbyTests.swift; sourceTree = "<group>"; };
+		4C45E95D277F6578000A394F /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C45E95F277F6578000A394F /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +51,9 @@
 		4C0CF4D2277C9BCD000DB6E3 = {
 			isa = PBXGroup;
 			children = (
-				4C0CF4DD277C9BCE000DB6E3 /* Alby */,
-				4C45E95E277F6578000A394F /* AlbyTests */,
+				4C0CF4DE277C9BCE000DB6E3 /* App.swift */,
+				4C45E95F277F6578000A394F /* Tests.swift */,
+				4C0CF4E2277C9BD2000DB6E3 /* Assets.xcassets */,
 				4C0CF4DC277C9BCE000DB6E3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,36 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				4C0CF4DB277C9BCE000DB6E3 /* Alby.app */,
-				4C45E95D277F6578000A394F /* AlbyTests.xctest */,
+				4C45E95D277F6578000A394F /* Tests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		4C0CF4DD277C9BCE000DB6E3 /* Alby */ = {
-			isa = PBXGroup;
-			children = (
-				4C0CF4DE277C9BCE000DB6E3 /* App.swift */,
-				4C0CF4E0277C9BCE000DB6E3 /* ContentView.swift */,
-				4C0CF4E2277C9BD2000DB6E3 /* Assets.xcassets */,
-				4C0CF4E4277C9BD2000DB6E3 /* Preview Content */,
-			);
-			path = Alby;
-			sourceTree = "<group>";
-		};
-		4C0CF4E4277C9BD2000DB6E3 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				4C0CF4E5277C9BD2000DB6E3 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		4C45E95E277F6578000A394F /* AlbyTests */ = {
-			isa = PBXGroup;
-			children = (
-				4C45E95F277F6578000A394F /* AlbyTests.swift */,
-			);
-			path = AlbyTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,9 +87,9 @@
 			productReference = 4C0CF4DB277C9BCE000DB6E3 /* Alby.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4C45E95C277F6578000A394F /* AlbyTests */ = {
+		4C45E95C277F6578000A394F /* Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4C45E963277F6578000A394F /* Build configuration list for PBXNativeTarget "AlbyTests" */;
+			buildConfigurationList = 4C45E963277F6578000A394F /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
 				4C45E959277F6578000A394F /* Sources */,
 				4C45E95A277F6578000A394F /* Frameworks */,
@@ -130,9 +100,9 @@
 			dependencies = (
 				4C45E962277F6578000A394F /* PBXTargetDependency */,
 			);
-			name = AlbyTests;
+			name = Tests;
 			productName = AlbyTests;
-			productReference = 4C45E95D277F6578000A394F /* AlbyTests.xctest */;
+			productReference = 4C45E95D277F6578000A394F /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -168,7 +138,7 @@
 			projectRoot = "";
 			targets = (
 				4C0CF4DA277C9BCE000DB6E3 /* Alby */,
-				4C45E95C277F6578000A394F /* AlbyTests */,
+				4C45E95C277F6578000A394F /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -178,7 +148,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C0CF4E6277C9BD2000DB6E3 /* Preview Assets.xcassets in Resources */,
 				4C0CF4E3277C9BD2000DB6E3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,7 +166,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C0CF4E1277C9BCE000DB6E3 /* ContentView.swift in Sources */,
 				4C0CF4DF277C9BCE000DB6E3 /* App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,7 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C45E960277F6578000A394F /* AlbyTests.swift in Sources */,
+				4C45E9672780F1E0000A394F /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +312,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Alby/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -368,7 +335,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Alby/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -439,7 +405,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4C45E963277F6578000A394F /* Build configuration list for PBXNativeTarget "AlbyTests" */ = {
+		4C45E963277F6578000A394F /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C45E964277F6578000A394F /* Debug */,

@@ -66,3 +66,26 @@ struct Alby {
         try json.write(to: albyJsonURL, atomically: true, encoding: .ascii)
     }
 }
+
+// TODO: List
+// - Get the App Icons from the system or Bundle them (easier)?
+// - Where do we copy the Extension itself? alby-1.1.0-fx.zip? Is is smart to build it, or should we rather download it (smarter) and put a copy then in the right folder.
+//     --> I need the URL where I can download it. https://addons.mozilla.org/firefox/downloads/file/3887973/alby_bitcoin_lightning_wallet-1.2.1-fx.xpi ? Is this URL fixed?
+// - List @
+
+//
+//private getDarwinNMHS() {
+//    return {
+//      Firefox: `${this.homedir()}/Library/Application\ Support/Mozilla/`,
+//      Chrome: `${this.homedir()}/Library/Application\ Support/Google/Chrome/`,
+//      "Chrome Beta": `${this.homedir()}/Library/Application\ Support/Google/Chrome\ Beta/`,
+//      "Chrome Dev": `${this.homedir()}/Library/Application\ Support/Google/Chrome\ Dev/`,
+//      "Chrome Canary": `${this.homedir()}/Library/Application\ Support/Google/Chrome\ Canary/`,
+//      Chromium: `${this.homedir()}/Library/Application\ Support/Chromium/`,
+//      "Microsoft Edge": `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge/`,
+//      "Microsoft Edge Beta": `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge\ Beta/`,
+//      "Microsoft Edge Dev": `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge\ Dev/`,
+//      "Microsoft Edge Canary": `${this.homedir()}/Library/Application\ Support/Microsoft\ Edge\ Canary/`,
+//      Vivaldi: `${this.homedir()}/Library/Application\ Support/Vivaldi/`,
+//    };
+//  }
