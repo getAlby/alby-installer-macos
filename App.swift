@@ -31,7 +31,7 @@ struct Window: App {
             .alert(isPresented: .constant(localizedError?.isEmpty == false)) {
                 Alert(title: Text(localizedError!))
             }
-            .frame(width: CGFloat((browsers.count * 200) + 200), height: 240)
+            .frame(width: CGFloat((browsers.count * 128) + 270), height: 240)
             .onAppear {
                 browsers = Browser.installed
                 loaded = true
