@@ -90,13 +90,14 @@ struct Browser: Identifiable {
         guard let bundle = Bundle.main.resourcePath else {
             return nil
         }
+        // https://github.com/getAlby/alby-companion-rs/releases
         return """
             {
             "name": "alby",
             "description": "Alby native messaging to connect to nodes behind Tor",
             "path": "\(bundle)/alby",
             "type": "stdio",
-            "allowed_\(chrome ? "origins" : "extensions")": [ "extension@getalby.com" ]
+            "allowed_\(chrome ? "origins" : "extensions")": ["\(chrome ? "chrome-extension://iokeahhehimjnekafflcihljlcjccdbe/" : "extension@getalby.com")"]
             }
             """
     }
