@@ -12,18 +12,24 @@ struct Window: App {
         WindowGroup {
             HStack(alignment: .bottom) {
                 if loaded {
-                    VStack(alignment: .leading) {
-                        EmptyView()
-                            .frame(width: 128, height: 128)
-                        Label("Install the extension", systemImage: "1.circle")
-                        Label("Install the companion", systemImage: "2.circle")
+                    if browsers.count > 0 {
+                        VStack(alignment: .leading) {
+                            EmptyView()
+                                .frame(width: 128, height: 128)
+                            Label("Install the extension", systemImage: "1.circle")
+                            Label("Install the companion", systemImage: "2.circle")
+                        }
+                        .padding(.leading)
+                        .font(.title)
+                    } else {
+                        VStack {
+                            Text("No supported Browser found")
+                            Button("Try again", action: seek)
+                        }
                     }
-                    .padding(.leading)
-                    .font(.title)
                     ForEach(browsers) {
                         view(for: $0)
                     }
-                    Spacer()
                 } else {
                     Text("Seeking Browsers...")
                         .font(.largeTitle)
@@ -37,10 +43,14 @@ struct Window: App {
             }
             .frame(width: CGFloat((browsers.count * 128) + 280), height: 240)
             .onAppear {
-                browsers = Browser.installed
-                loaded = true
+                seek()
             }
         }
+    }
+
+    private func seek() {
+        browsers = Browser.installed
+        loaded = true
     }
 
     @ViewBuilder
