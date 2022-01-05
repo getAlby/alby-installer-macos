@@ -56,7 +56,7 @@ struct Window: App {
             Button("Install") { // Extension (Also green check mark?!)
                 do {
                     if let url = URL(string: "https://getalby.com/install/")?.appendingPathComponent(browser.id),
-                    let application = browser.application {
+                       let application = browser.application {
                         NSWorkspace.shared.open([url], withApplicationAt: application, configuration: NSWorkspace.OpenConfiguration())
                         try browser.installOrRemove()
                     }
@@ -148,14 +148,9 @@ struct Browser: Identifiable {
     }
 
     var icon: NSImage? {
-        if let url = application, let bundle = Bundle(url: url)?.resourcePath,
-           let files = try? FileManager.default.contentsOfDirectory(atPath: bundle) {
-            for file in files {
-                if file.hasSuffix("icns") {
-                    if let image = Bundle(url: url)?.resourceURL?.appendingPathComponent(file) {
-                        return NSImage(contentsOf: image)
-                    }
-                }
+        if let url = application {
+            if let image = Bundle(url: url)?.resourceURL?.appendingPathComponent(chrome ? "app" : "firefox").appendingPathExtension("icns") {
+                return NSImage(contentsOf: image)
             }
         }
         return nil
