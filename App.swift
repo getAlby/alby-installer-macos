@@ -6,6 +6,7 @@ struct Window: App {
     @State var localizedError: String?
     @State var loaded = false
     @State var browsers: [Browser] = []
+    @State var showAlert = false
 
     var body: some Scene {
         WindowGroup {
@@ -31,7 +32,10 @@ struct Window: App {
             .alert(isPresented: .constant(localizedError?.isEmpty == false)) {
                 Alert(title: Text(localizedError!))
             }
-            .frame(width: CGFloat((browsers.count * 128) + 270), height: 240)
+            .alert(isPresented: .constant(showAlert)) {
+                Alert(title: Text("Companion App Installed"))
+            }
+            .frame(width: CGFloat((browsers.count * 128) + 280), height: 240)
             .onAppear {
                 browsers = Browser.installed
                 loaded = true
@@ -39,6 +43,7 @@ struct Window: App {
         }
     }
 
+    @ViewBuilder
     func view(for browser: Browser) -> some View {
         VStack {
             if let icon = browser.icon {
@@ -67,6 +72,7 @@ struct Window: App {
             Button {
                 do {
                     try browser.installOrRemove()
+                    showAlert = browser.companionInstalled
                 } catch {
                     localizedError = error.localizedDescription
                 }
