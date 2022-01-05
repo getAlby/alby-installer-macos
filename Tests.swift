@@ -3,26 +3,36 @@ import XCTest
 @testable import Alby
 
 class AlbyTests: XCTestCase {
-    let alby = Alby()
-
     override func setUpWithError() throws {
     }
 
     override func tearDownWithError() throws {
     }
 
-    func testSeek() throws {
-        XCTAssertTrue(alby.seek())
+    func testHasAtLeastOneBrowser() throws {
+        XCTAssert(Browser.installed.count > 0)
     }
 
     func testInstall() throws {
-        XCTAssertNoThrow(try alby.install())
-        try! FileManager.default.removeItem(at: alby.albyJsonURL)
+        XCTAssert(Browser.installed.count > 0)
+        if let browser = Browser.installed.first {
+            if albyJsonExist(for: browser) {
+                try! FileManager.default.removeItem(at: browser.albyJsonURL)
+            }
+            try browser.installOrRemove()
+            XCTAssertTrue(albyJsonExist(for: browser))
+            try browser.installOrRemove()
+            XCTAssertFalse(albyJsonExist(for: browser))
+        }
+    }
+
+    private func albyJsonExist(for browser: Browser) -> Bool {
+        FileManager.default.fileExists(atPath: browser.albyJsonURL.path)
     }
 
     func testPerformanceExample() throws {
         measure {
-            _ = alby.seek()
+            _ = Browser.all
         }
     }
 
