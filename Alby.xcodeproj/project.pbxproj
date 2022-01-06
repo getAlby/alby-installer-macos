@@ -27,6 +27,8 @@
 		4C0CF4DB277C9BCE000DB6E3 /* Alby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0CF4DE277C9BCE000DB6E3 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		4C0CF4E2277C9BD2000DB6E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4C282998278767FE0098E172 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4C282999278768BE0098E172 /* dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark.png; sourceTree = "<group>"; };
 		4C45E95D277F6578000A394F /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C45E95F277F6578000A394F /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		4C45E96927860A2A000A394F /* alby */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = alby; sourceTree = "<group>"; };
@@ -53,6 +55,8 @@
 		4C0CF4D2277C9BCD000DB6E3 = {
 			isa = PBXGroup;
 			children = (
+				4C282998278767FE0098E172 /* README.md */,
+				4C282999278768BE0098E172 /* dark.png */,
 				4C45E96927860A2A000A394F /* alby */,
 				4C0CF4DE277C9BCE000DB6E3 /* App.swift */,
 				4C45E95F277F6578000A394F /* Tests.swift */,
