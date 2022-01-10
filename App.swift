@@ -1,12 +1,17 @@
 //  Built by Manuel @StuFFmc Carrasco Molina on New year's Eve 2021 / January 2022
 import SwiftUI
 
+enum AlertType: Int {
+    case installed
+    case deleted
+}
+
 @main
 struct Window: App {
     @State var localizedError: String?
     @State var loaded = false
     @State var browsers: [Browser] = []
-    @State var showAlert = false
+    @State var showAlert: AlertType? = nil
 
     var body: some Scene {
         WindowGroup {
@@ -16,8 +21,7 @@ struct Window: App {
                         VStack(alignment: .leading) {
                             EmptyView()
                                 .frame(width: 128, height: 128)
-                            Label("Install the extension", systemImage: "1.circle")
-                            Label("Install the companion", systemImage: "2.circle")
+                            Text("Install Alby:")
                         }
                         .padding(.leading)
                         .font(.title)
@@ -38,8 +42,8 @@ struct Window: App {
             .alert(isPresented: .constant(localizedError?.isEmpty == false)) {
                 Alert(title: Text(localizedError!))
             }
-            .alert(isPresented: .constant(showAlert)) {
-                Alert(title: Text("Companion App Installed"))
+            .alert(isPresented: .constant(showAlert != nil)) {
+                Alert(title: Text("Companion App " + (showAlert == .installed ? "Installed" : "Deleted")))
             }
             .frame(width: CGFloat((browsers.count * 128) + 280), height: 240)
             .onAppear {
@@ -68,23 +72,29 @@ struct Window: App {
                     }
                 }
             }
-            Button("Install") { // Extension (Also green check mark?!)
-                do {
-                    if let url = URL(string: "https://getalby.com/install/")?.appendingPathComponent(browser.id),
-                       let application = browser.application {
-                        NSWorkspace.shared.open([url], withApplicationAt: application, configuration: NSWorkspace.OpenConfiguration())
-                        try browser.installOrRemove()
-                    }
-                } catch {
-                    localizedError = error.localizedDescription
-                }
-            }
             Button {
-                do {
-                    try browser.installOrRemove()
-                    showAlert = browser.companionInstalled
-                } catch {
-                    localizedError = error.localizedDescription
+                if browser.companionInstalled {
+                    // Remove JSON
+                    do {
+                        try browser.remove()
+                        showAlert = !browser.companionInstalled ? .deleted : nil
+                    } catch {
+                        localizedError = error.localizedDescription
+                    }
+                } else {
+                    // Install
+                    do {
+                        // Copy JSON
+                        try browser.install()
+                        showAlert = browser.companionInstalled ? .installed : nil
+                        // Install Extension
+                        if let url = URL(string: "https://getalby.com/install/")?.appendingPathComponent(browser.id),
+                           let application = browser.application {
+                            NSWorkspace.shared.open([url], withApplicationAt: application, configuration: NSWorkspace.OpenConfiguration())
+                        }
+                    } catch {
+                        localizedError = error.localizedDescription
+                    }
                 }
             } label: {
                 if browser.companionInstalled {
@@ -151,12 +161,12 @@ struct Browser: Identifiable {
         FileManager.default.fileExists(atPath: nativeMessagingURL.path)
     }
 
-    func installOrRemove() throws {
-        if companionInstalled {
-            try FileManager.default.removeItem(at: albyJsonURL)
-        } else {
-            try json?.write(to: albyJsonURL, atomically: true, encoding: .ascii)
-        }
+    func install() throws {
+        try json?.write(to: albyJsonURL, atomically: true, encoding: .ascii)
+    }
+    
+    func remove() throws {
+        try FileManager.default.removeItem(at: albyJsonURL)
     }
 
     var application: URL? {
