@@ -1,5 +1,3 @@
-brew install create-dmg
-rm -rf Alby-Installer.dmg
 create-dmg \
   --volname "Alby Installer" \
   --window-size 800 400 \
