@@ -1,7 +1,7 @@
 # Alby macOS Installer
 
 This is the Extension and Companion Installer for **[Alby](http://getalby.com)**.
-![](dark.png)
+![](light.png)
 
 ## Usage
 
