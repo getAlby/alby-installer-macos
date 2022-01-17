@@ -1,47 +1,84 @@
 //  Built by Manuel @StuFFmc Carrasco Molina on New year's Eve 2021 / January 2022
 import SwiftUI
 
+enum AlertType: Int {
+    case installed
+    case deleted
+}
+
+struct InstallButtonStyle: ButtonStyle {
+
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .font(Font.system(size: 14.0, weight: .regular))
+            .foregroundColor(configuration.isPressed ? Color.black.opacity(0.5) : Color.black)
+            .frame(width: 213.0, height: 35.0)
+            .background(Color(red: 0.97, green: 0.77, blue: 0.33))
+            .cornerRadius(35.0 / 2.0)
+    }
+    
+}
+
 @main
 struct Window: App {
     @State var localizedError: String?
     @State var loaded = false
     @State var browsers: [Browser] = []
-    @State var showAlert = false
+    @State var showAlert: AlertType? = nil
 
     var body: some Scene {
         WindowGroup {
-            HStack(alignment: .bottom) {
-                if loaded {
-                    if browsers.count > 0 {
-                        VStack(alignment: .leading) {
-                            EmptyView()
-                                .frame(width: 128, height: 128)
-                            Label("Install the extension", systemImage: "1.circle")
-                            Label("Install the companion", systemImage: "2.circle")
-                        }
-                        .padding(.leading)
-                        .font(.title)
-                    } else {
-                        VStack {
-                            Text("No supported Browser found")
-                            Button("Try again", action: seek)
+            ZStack {
+                Color(red: 1.00, green: 0.99, blue: 0.98)
+                
+                VStack {
+                    VStack {
+                        Spacer().frame(height: 32.0)
+                        Image("logo")
+                            .frame(width: 120.0)
+                        Spacer().frame(height: 24.0)
+                        Text("Lightning buzz for your Browser")
+                            .font(Font.system(size: 24.0, weight: .bold))
+                            .foregroundColor(Color.black)
+                        Spacer().frame(height: 4.0)
+                        Text("Alby brings Bitcoin to the web with in-browser payments and identity, no account required.")
+                            .font(Font.system(size: 14.0, weight: .regular))
+                            .foregroundColor(Color.black.opacity(0.7))
+                    }.multilineTextAlignment(.center)
+                       
+                    Spacer().frame(height: 16.0)
+                    
+                    HStack(spacing: 40.0) {
+                        if loaded {
+                            if browsers.count == 0 {
+                                VStack {
+                                    Spacer()
+                                    Text("No supported Browser found")
+                                    Button("Try again", action: seek)
+                                    Spacer()
+                                }
+                            }
+                            ForEach(browsers) {
+                                view(for: $0)
+                            }
+                        } else {
+                            Text("Seeking Browsers...")
+                                .font(.largeTitle)
                         }
                     }
-                    ForEach(browsers) {
-                        view(for: $0)
-                    }
-                } else {
-                    Text("Seeking Browsers...")
-                        .font(.largeTitle)
+                    
+                    Spacer().frame(height: 60.0)
                 }
             }
+            .preferredColorScheme(.light)
+            .navigationTitle("Alby Installer")
+            .frame(width: (CGFloat(browsers.count) * 213.0) + (CGFloat(browsers.count - 1) * 40.0) + 78.0, height: 570.0)
             .alert(isPresented: .constant(localizedError?.isEmpty == false)) {
                 Alert(title: Text(localizedError!))
             }
-            .alert(isPresented: .constant(showAlert)) {
-                Alert(title: Text("Companion App Installed"))
+            .alert(isPresented: .constant(showAlert != nil)) {
+                Alert(title: Text("Companion App " + (showAlert == .installed ? "Installed" : "Deleted")))
             }
-            .frame(width: CGFloat((browsers.count * 128) + 280), height: 240)
             .onAppear {
                 seek()
             }
@@ -55,36 +92,49 @@ struct Window: App {
 
     @ViewBuilder
     func view(for browser: Browser) -> some View {
-        VStack {
-            if let icon = browser.icon {
-                ZStack {
-                    Image(nsImage: icon)
-                        .resizable()
-                        .frame(width: 128, height: 128)
-                    if browser.companionInstalled {
-                        Image(systemName: "checkmark")
-                            .foregroundColor(.green)
-                            .font(.largeTitle.bold())
+        VStack(spacing: 16.0) {
+            ZStack {
+                Color(red: 1.00, green: 0.98, blue: 0.93)
+                
+                if let icon = browser.icon {
+                    ZStack {
+                        Image(nsImage: icon)
+                            .resizable()
+                            .frame(width: 150.0, height: 150.0)
+                        if browser.companionInstalled {
+                            Image(systemName: "checkmark")
+                                .foregroundColor(.green)
+                                .font(.largeTitle.bold())
+                        }
                     }
                 }
             }
-            Button("Install") { // Extension (Also green check mark?!)
-                do {
-                    if let url = URL(string: "https://getalby.com/install/")?.appendingPathComponent(browser.id),
-                       let application = browser.application {
-                        NSWorkspace.shared.open([url], withApplicationAt: application, configuration: NSWorkspace.OpenConfiguration())
-                        try browser.installOrRemove()
-                    }
-                } catch {
-                    localizedError = error.localizedDescription
-                }
-            }
+            .frame(width: 213.0, height: 213.0)
+            .cornerRadius(16.0)
+            
             Button {
-                do {
-                    try browser.installOrRemove()
-                    showAlert = browser.companionInstalled
-                } catch {
-                    localizedError = error.localizedDescription
+                if browser.companionInstalled {
+                    // Remove JSON
+                    do {
+                        try browser.remove()
+                        showAlert = !browser.companionInstalled ? .deleted : nil
+                    } catch {
+                        localizedError = error.localizedDescription
+                    }
+                } else {
+                    // Install
+                    do {
+                        // Copy JSON
+                        try browser.install()
+                        showAlert = browser.companionInstalled ? .installed : nil
+                        // Install Extension
+                        if let url = URL(string: "https://getalby.com/install/")?.appendingPathComponent(browser.id),
+                           let application = browser.application {
+                            NSWorkspace.shared.open([url], withApplicationAt: application, configuration: NSWorkspace.OpenConfiguration())
+                        }
+                    } catch {
+                        localizedError = error.localizedDescription
+                    }
                 }
             } label: {
                 if browser.companionInstalled {
@@ -93,6 +143,7 @@ struct Window: App {
                     Text("Install")
                 }
             }
+            .buttonStyle(InstallButtonStyle())
         }
     }
 }
@@ -151,12 +202,12 @@ struct Browser: Identifiable {
         FileManager.default.fileExists(atPath: nativeMessagingURL.path)
     }
 
-    func installOrRemove() throws {
-        if companionInstalled {
-            try FileManager.default.removeItem(at: albyJsonURL)
-        } else {
-            try json?.write(to: albyJsonURL, atomically: true, encoding: .ascii)
-        }
+    func install() throws {
+        try json?.write(to: albyJsonURL, atomically: true, encoding: .ascii)
+    }
+    
+    func remove() throws {
+        try FileManager.default.removeItem(at: albyJsonURL)
     }
 
     var application: URL? {
