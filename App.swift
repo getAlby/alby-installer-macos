@@ -50,7 +50,7 @@ struct Window: App {
                     
                     HStack(spacing: 40.0) {
                         if loaded {
-                            if browsers.count == 0 {
+                            if browsers.isEmpty {
                                 VStack {
                                     Spacer()
                                     Text("No supported Browser found")
@@ -72,7 +72,7 @@ struct Window: App {
             }
             .preferredColorScheme(.light)
             .navigationTitle("Alby Installer")
-            .frame(width: (CGFloat(browsers.count) * 213.0) + (CGFloat(browsers.count - 1) * 40.0) + 78.0, height: 570.0)
+            .frame(width: (CGFloat(columns) * 213.0) + (CGFloat(columns - 1) * 40.0) + 78.0, height: 570.0)
             .alert(isPresented: .constant(localizedError?.isEmpty == false)) {
                 Alert(title: Text(localizedError!))
             }
@@ -83,6 +83,10 @@ struct Window: App {
                 seek()
             }
         }
+    }
+
+    private var columns: Int {
+        browsers.count < 3 ? 3 : browsers.count
     }
 
     private func seek() {
