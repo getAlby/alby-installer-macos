@@ -14,7 +14,7 @@ Enjoy the code and please report any bugs.
 
 Build App:
 
-1. Clone project.
+1. Make sure you have the latest [alby companion release](https://github.com/getAlby/alby-companion-rs/releases) (get the macOS executable and overwrite the `alby` executable here.
 2. Open `Alby.xcodeproj`, press: `Prooduct` -> `Archive` -> `Distribute App`.
 3. Select appropriate signing and distribution options and generate `Alby.app` bundle.
 
