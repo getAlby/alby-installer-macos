@@ -1,5 +1,6 @@
 //  Built by Manuel @StuFFmc Carrasco Molina on New year's Eve 2021 / January 2022
 import SwiftUI
+import AppKit
 
 enum AlertType: Int {
     case installed
@@ -7,20 +8,28 @@ enum AlertType: Int {
 }
 
 struct InstallButtonStyle: ButtonStyle {
-
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
-            .font(Font.system(size: 14.0, weight: .regular))
+            .font(Font.system(size: 14, weight: .regular))
             .foregroundColor(configuration.isPressed ? Color.black.opacity(0.5) : Color.black)
-            .frame(width: 213.0, height: 35.0)
+            .frame(width: 213, height: 35)
             .background(Color(red: 0.97, green: 0.77, blue: 0.33))
-            .cornerRadius(35.0 / 2.0)
+            .cornerRadius(35 / 2)
     }
     
 }
 
+class AppDelegate: NSObject, NSApplicationDelegate {
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        PFMoveToApplicationsFolderIfNecessary()
+    }
+}
+
 @main
 struct Window: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
+    @Environment(\.scenePhase) private var scenePhase
     @State var localizedError: String?
     @State var loaded = false
     @State var browsers: [Browser] = []
