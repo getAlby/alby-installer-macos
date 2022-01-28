@@ -86,7 +86,7 @@ struct Window: App {
                 Alert(title: Text(localizedError!))
             }
             .alert(isPresented: .constant(showAlert != nil)) {
-                Alert(title: Text("Companion App " + (showAlert == .installed ? "Installed" : "Deleted")))
+                Alert(title: Text(showAlert == .installed ? "Alby is configured successfully. Now let’s add it to your browser" : "Companion App Deleted"))
             }
             .onAppear {
                 seek()
