@@ -38,7 +38,7 @@ struct Window: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
-                Color(red: 1.00, green: 0.99, blue: 0.98)
+                Color("Background")
                 
                 VStack {
                     VStack {
@@ -48,11 +48,10 @@ struct Window: App {
                         Spacer().frame(height: 24.0)
                         Text("Lightning buzz for your Browser")
                             .font(Font.system(size: 24.0, weight: .bold))
-                            .foregroundColor(Color.black)
                         Spacer().frame(height: 4.0)
                         Text("Alby brings Bitcoin to the web with in-browser payments and identity, no account required.")
                             .font(Font.system(size: 14.0, weight: .regular))
-                            .foregroundColor(Color.black.opacity(0.7))
+                            .foregroundColor(Color.primary.opacity(0.7))
                     }.multilineTextAlignment(.center)
                        
                     Spacer().frame(height: 16.0)
@@ -79,7 +78,6 @@ struct Window: App {
                     Spacer().frame(height: 60.0)
                 }
             }
-            .preferredColorScheme(.light)
             .navigationTitle("Alby Installer")
             .frame(width: (CGFloat(columns) * 213.0) + (CGFloat(columns - 1) * 40.0) + 78.0, height: 570.0)
             .alert(isPresented: .constant(localizedError?.isEmpty == false)) {
