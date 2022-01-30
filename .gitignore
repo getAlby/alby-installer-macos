@@ -4,3 +4,4 @@ alby
 alby*.zip
 Alby-Installer.dmg
 DMG/dmg_content/Alby.app
+/macExtension/Resources

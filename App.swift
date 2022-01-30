@@ -1,6 +1,7 @@
-//  Built by Manuel @StuFFmc Carrasco Molina on New year's Eve 2021 / January 2022
+//  Started by Manuel @StuFFmc Carrasco Molina on New year's Eve 2021 / January 2022
 import SwiftUI
 import AppKit
+import SafariServices
 
 enum AlertType: Int {
     case installed
@@ -22,6 +23,7 @@ struct InstallButtonStyle: ButtonStyle {
 class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ notification: Notification) {
         PFMoveToApplicationsFolderIfNecessary()
+        NSWindow.allowsAutomaticWindowTabbing = false
     }
 }
 
@@ -31,9 +33,9 @@ struct Window: App {
 
     @Environment(\.scenePhase) private var scenePhase
     @State var localizedError: String?
-    @State var loaded = false
     @State var browsers: [Browser] = []
     @State var showAlert: AlertType? = nil
+    @State var isEnabledForSafari = false
 
     var body: some Scene {
         WindowGroup {
@@ -57,28 +59,15 @@ struct Window: App {
                     Spacer().frame(height: 16.0)
                     
                     HStack(spacing: 40.0) {
-                        if loaded {
-                            if browsers.isEmpty {
-                                VStack {
-                                    Spacer()
-                                    Text("No supported Browser found")
-                                    Button("Try again", action: seek)
-                                    Spacer()
-                                }
-                            }
-                            ForEach(browsers) {
-                                view(for: $0)
-                            }
-                        } else {
-                            Text("Seeking Browsers...")
-                                .font(.largeTitle)
+                        ForEach(browsers) {
+                            view(for: $0)
                         }
                     }
                     
                     Spacer().frame(height: 60.0)
                 }
             }
-            .navigationTitle("Alby Installer")
+            .navigationTitle("Alby")
             .frame(width: (CGFloat(columns) * 213.0) + (CGFloat(columns - 1) * 40.0) + 78.0, height: 570.0)
             .alert(isPresented: .constant(localizedError?.isEmpty == false)) {
                 Alert(title: Text(localizedError!))
@@ -90,15 +79,45 @@ struct Window: App {
                 seek()
             }
         }
+        .onChange(of: scenePhase) { _ in
+            checkIfIsEnabledForSafari()
+        }
+        .commands {
+            CommandGroup(after: .newItem) {
+                Button {
+                    seek()
+                } label: {
+                    Text("Refresh")
+                }
+                .keyboardShortcut("R", modifiers: [.command])
+            }
+        }
+    }
+
+    private func seek() {
+        browsers = [Browser(id: "com.apple.Safari", appSupportFolder: nil, chrome: nil)] + Browser.installed
+        checkIfIsEnabledForSafari()
     }
 
     private var columns: Int {
         browsers.count < 3 ? 3 : browsers.count
     }
 
-    private func seek() {
-        browsers = Browser.installed
-        loaded = true
+    private func checkIfIsEnabledForSafari() {
+        Task {
+            do {
+                isEnabledForSafari = try await SFSafariExtensionManager.stateOfSafariExtension(withIdentifier: safariExtensionBundleIdentifier).isEnabled
+            } catch {
+                localizedError = error.localizedDescription
+                isEnabledForSafari = false
+            }
+        }
+    }
+
+    var checkmark: some View {
+        Image(systemName: "checkmark")
+            .foregroundColor(.green)
+            .font(.largeTitle.bold())
     }
 
     @ViewBuilder
@@ -112,10 +131,12 @@ struct Window: App {
                         Image(nsImage: icon)
                             .resizable()
                             .frame(width: 150.0, height: 150.0)
-                        if browser.companionInstalled {
-                            Image(systemName: "checkmark")
-                                .foregroundColor(.green)
-                                .font(.largeTitle.bold())
+                        if let installed = browser.companionInstalled {
+                            if installed { checkmark }
+                        } else {
+                            if isEnabledForSafari {
+                                checkmark
+                            }
                         }
                     }
                 }
@@ -124,114 +145,62 @@ struct Window: App {
             .cornerRadius(16.0)
             
             Button {
-                if browser.companionInstalled {
-                    // Remove JSON
-                    do {
-                        try browser.remove()
-                        showAlert = !browser.companionInstalled ? .deleted : nil
-                    } catch {
+                if browser.chrome == nil {
+                    SFSafariApplication.showPreferencesForExtension(withIdentifier: safariExtensionBundleIdentifier) { error in
+                        guard let error = error else {
+                            return
+                        }
                         localizedError = error.localizedDescription
                     }
                 } else {
-                    // Install
-                    do {
-                        // Copy JSON
-                        try browser.install()
-                        showAlert = browser.companionInstalled ? .installed : nil
-                        // Install Extension
-                        if let url = URL(string: "https://getalby.com/install/")?.appendingPathComponent(browser.id),
-                           let application = browser.application {
-                            NSWorkspace.shared.open([url], withApplicationAt: application, configuration: NSWorkspace.OpenConfiguration())
-                        }
-                    } catch {
-                        localizedError = error.localizedDescription
-                    }
+                    installOrRemoveCompanion(for: browser)
                 }
             } label: {
-                if browser.companionInstalled {
-                    Text("Remove")
+                if let installed = browser.companionInstalled {
+                    if installed {
+                        Text("Remove")
+                    } else {
+                        Text("Install")
+                    }
                 } else {
-                    Text("Install")
+                    if isEnabledForSafari {
+                        Text("Disable")
+                    } else {
+                        Text("Enable")
+                    }
                 }
             }
             .buttonStyle(InstallButtonStyle())
         }
     }
-}
 
-struct Browser: Identifiable {
-    let id: String
-    let appSupportFolder: String
-    let chrome: Bool
-
-    var json: String? {
-        guard let bundle = Bundle.main.resourcePath else {
-            return nil
+    private func installOrRemoveCompanion(for browser: Browser) {
+        guard let installed = browser.companionInstalled else {
+            return
         }
-        // https://github.com/getAlby/alby-companion-rs/releases
-        return """
-            {
-            "name": "alby",
-            "description": "Alby native messaging to connect to nodes behind Tor",
-            "path": "\(bundle)/alby",
-            "type": "stdio",
-            "allowed_\(chrome ? "origins" : "extensions")": ["\(chrome ? "chrome-extension://iokeahhehimjnekafflcihljlcjccdbe/" : "extension@getalby.com")"]
+        if installed {
+            // Remove JSON
+            do {
+                try browser.remove()
+                showAlert = installed ? nil : .deleted
+            } catch {
+                localizedError = error.localizedDescription
             }
-            """
-    }
-
-    static var all: [Browser] {
-        [Browser(id: "org.mozilla.firefox", appSupportFolder: "Mozilla", chrome: false),
-         Browser(id: "com.google.Chrome", appSupportFolder: "Google/Chrome", chrome: true),
-         Browser(id: "org.chromium.Chromium", appSupportFolder: "Chromium", chrome: true),
-         Browser(id: "com.vivaldi.Vivaldi", appSupportFolder: "Vivaldi", chrome: true)]
-    }
-
-    static var installed: [Browser] {
-        all.filter { $0.path != nil }
-    }
-
-    var path: URL? {
-        NSWorkspace.shared.urlForApplication(withBundleIdentifier: id)
-    }
-
-    private var nativeMessagingURL: URL {
-        let appSupportURL = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
-        let url = appSupportURL.appendingPathComponent(appSupportFolder).appendingPathComponent("NativeMessagingHosts")
-        try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: false, attributes: nil)
-        return url
-    }
-
-    var albyJsonURL: URL {
-        nativeMessagingURL.appendingPathComponent("alby").appendingPathExtension("json")
-    }
-
-    var companionInstalled: Bool {
-        FileManager.default.fileExists(atPath: albyJsonURL.path)
-    }
-
-    var exists: Bool {
-        FileManager.default.fileExists(atPath: nativeMessagingURL.path)
-    }
-
-    func install() throws {
-        try json?.write(to: albyJsonURL, atomically: true, encoding: .ascii)
-    }
-    
-    func remove() throws {
-        try FileManager.default.removeItem(at: albyJsonURL)
-    }
-
-    var application: URL? {
-        NSWorkspace.shared.urlForApplication(withBundleIdentifier: id)
-    }
-
-    var icon: NSImage? {
-        if let url = application {
-            if let image = Bundle(url: url)?.resourceURL?.appendingPathComponent(chrome ? "app" : "firefox").appendingPathExtension("icns") {
-                return NSImage(contentsOf: image)
+        } else {
+            // Install
+            do {
+                // Copy JSON
+                try browser.install()
+                showAlert = installed ? .installed : nil
+                // Install Extension
+                if let url = URL(string: "https://getalby.com/install/")?.appendingPathComponent(browser.id),
+                   let application = browser.application {
+                    NSWorkspace.shared.open([url], withApplicationAt: application, configuration: NSWorkspace.OpenConfiguration())
+                }
+            } catch {
+                localizedError = error.localizedDescription
             }
         }
-        return nil
+        seek()
     }
 }
