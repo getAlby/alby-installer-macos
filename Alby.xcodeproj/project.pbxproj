@@ -11,6 +11,27 @@
 		4C0CF4E3277C9BD2000DB6E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C0CF4E2277C9BD2000DB6E3 /* Assets.xcassets */; };
 		4C45E9672780F1E0000A394F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C45E95F277F6578000A394F /* Tests.swift */; };
 		4C45E96A27860A2B000A394F /* alby in Resources */ = {isa = PBXBuildFile; fileRef = 4C45E96927860A2A000A394F /* alby */; };
+		4CCA46D127A5A7DF003F89BE /* prompt.css in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA46BF27A5A7DF003F89BE /* prompt.css */; };
+		4CCA46D227A5A7DF003F89BE /* welcome.css in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA46C027A5A7DF003F89BE /* welcome.css */; };
+		4CCA46D327A5A7DF003F89BE /* popup.html in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA46C127A5A7DF003F89BE /* popup.html */; };
+		4CCA46D427A5A7DF003F89BE /* 4ec723a59145ea392c89.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA46C227A5A7DF003F89BE /* 4ec723a59145ea392c89.png */; };
+		4CCA46D527A5A7DF003F89BE /* js in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA46C327A5A7DF003F89BE /* js */; };
+		4CCA46D627A5A7DF003F89BE /* welcome.html in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA46C427A5A7DF003F89BE /* welcome.html */; };
+		4CCA46D727A5A7DF003F89BE /* b65534c5223684261945.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA46C527A5A7DF003F89BE /* b65534c5223684261945.woff2 */; };
+		4CCA46D827A5A7DF003F89BE /* b27297c148a7ef314ce2.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA46C627A5A7DF003F89BE /* b27297c148a7ef314ce2.woff2 */; };
+		4CCA46D927A5A7DF003F89BE /* popup.css in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA46C727A5A7DF003F89BE /* popup.css */; };
+		4CCA46DA27A5A7DF003F89BE /* prompt.html in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA46C827A5A7DF003F89BE /* prompt.html */; };
+		4CCA46DB27A5A7DF003F89BE /* d71e545b3dda20f83904.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA46C927A5A7DF003F89BE /* d71e545b3dda20f83904.png */; };
+		4CCA46DC27A5A7DF003F89BE /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA46CA27A5A7DF003F89BE /* manifest.json */; };
+		4CCA46DD27A5A7DF003F89BE /* f16a511b73f43523b098.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA46CB27A5A7DF003F89BE /* f16a511b73f43523b098.png */; };
+		4CCA46DE27A5A7DF003F89BE /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA46CC27A5A7DF003F89BE /* assets */; };
+		4CCA46DF27A5A7DF003F89BE /* options.css in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA46CD27A5A7DF003F89BE /* options.css */; };
+		4CCA46E027A5A7DF003F89BE /* 27972c37743d848a6c54.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA46CE27A5A7DF003F89BE /* 27972c37743d848a6c54.png */; };
+		4CCA46E127A5A7DF003F89BE /* options.html in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA46CF27A5A7DF003F89BE /* options.html */; };
+		4CCA46E227A5A7DF003F89BE /* ed5843bedf17127fa54b.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CCA46D027A5A7DF003F89BE /* ed5843bedf17127fa54b.jpg */; };
+		4CDC432B27A58FC300131398 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC432A27A58FC300131398 /* SafariWebExtensionHandler.swift */; };
+		4CDC434227A58FC400131398 /* Alby ⚡️ Wallet.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4CDC432827A58FC300131398 /* Alby ⚡️ Wallet.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4CDC434727A5941E00131398 /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC434627A5941E00131398 /* Browser.swift */; };
 		4CE7FAE327A337B0004E36EE /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE7FAE127A337B0004E36EE /* PFMoveApplication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4CE7FAE927A33909004E36EE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE7FAE827A33909004E36EE /* Security.framework */; };
 		4CE7FAEE27A34201004E36EE /* LetsMove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE7FADE27A3378F004E36EE /* LetsMove.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -24,7 +45,28 @@
 			remoteGlobalIDString = 4C0CF4DA277C9BCE000DB6E3;
 			remoteInfo = Alby;
 		};
+		4CDC433F27A58FC300131398 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C0CF4D3277C9BCD000DB6E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4CDC432727A58FC300131398;
+			remoteInfo = macExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4CDC434127A58FC300131398 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4CDC434227A58FC400131398 /* Alby ⚡️ Wallet.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4C0CF4DB277C9BCE000DB6E3 /* Alby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alby.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,12 +77,34 @@
 		4C45E95D277F6578000A394F /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C45E95F277F6578000A394F /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		4C45E96927860A2A000A394F /* alby */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = alby; sourceTree = "<group>"; };
+		4CCA46BF27A5A7DF003F89BE /* prompt.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = prompt.css; path = Resources/prompt.css; sourceTree = "<group>"; };
+		4CCA46C027A5A7DF003F89BE /* welcome.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = welcome.css; path = Resources/welcome.css; sourceTree = "<group>"; };
+		4CCA46C127A5A7DF003F89BE /* popup.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = popup.html; path = Resources/popup.html; sourceTree = "<group>"; };
+		4CCA46C227A5A7DF003F89BE /* 4ec723a59145ea392c89.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 4ec723a59145ea392c89.png; path = Resources/4ec723a59145ea392c89.png; sourceTree = "<group>"; };
+		4CCA46C327A5A7DF003F89BE /* js */ = {isa = PBXFileReference; lastKnownFileType = folder; name = js; path = Resources/js; sourceTree = "<group>"; };
+		4CCA46C427A5A7DF003F89BE /* welcome.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = welcome.html; path = Resources/welcome.html; sourceTree = "<group>"; };
+		4CCA46C527A5A7DF003F89BE /* b65534c5223684261945.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; name = b65534c5223684261945.woff2; path = Resources/b65534c5223684261945.woff2; sourceTree = "<group>"; };
+		4CCA46C627A5A7DF003F89BE /* b27297c148a7ef314ce2.woff2 */ = {isa = PBXFileReference; lastKnownFileType = file; name = b27297c148a7ef314ce2.woff2; path = Resources/b27297c148a7ef314ce2.woff2; sourceTree = "<group>"; };
+		4CCA46C727A5A7DF003F89BE /* popup.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = popup.css; path = Resources/popup.css; sourceTree = "<group>"; };
+		4CCA46C827A5A7DF003F89BE /* prompt.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = prompt.html; path = Resources/prompt.html; sourceTree = "<group>"; };
+		4CCA46C927A5A7DF003F89BE /* d71e545b3dda20f83904.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = d71e545b3dda20f83904.png; path = Resources/d71e545b3dda20f83904.png; sourceTree = "<group>"; };
+		4CCA46CA27A5A7DF003F89BE /* manifest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = manifest.json; path = Resources/manifest.json; sourceTree = "<group>"; };
+		4CCA46CB27A5A7DF003F89BE /* f16a511b73f43523b098.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = f16a511b73f43523b098.png; path = Resources/f16a511b73f43523b098.png; sourceTree = "<group>"; };
+		4CCA46CC27A5A7DF003F89BE /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = Resources/assets; sourceTree = "<group>"; };
+		4CCA46CD27A5A7DF003F89BE /* options.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = options.css; path = Resources/options.css; sourceTree = "<group>"; };
+		4CCA46CE27A5A7DF003F89BE /* 27972c37743d848a6c54.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 27972c37743d848a6c54.png; path = Resources/27972c37743d848a6c54.png; sourceTree = "<group>"; };
+		4CCA46CF27A5A7DF003F89BE /* options.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = options.html; path = Resources/options.html; sourceTree = "<group>"; };
+		4CCA46D027A5A7DF003F89BE /* ed5843bedf17127fa54b.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ed5843bedf17127fa54b.jpg; path = Resources/ed5843bedf17127fa54b.jpg; sourceTree = "<group>"; };
+		4CDC432327A58EB900131398 /* downloader.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = downloader.rb; sourceTree = "<group>"; };
+		4CDC432827A58FC300131398 /* Alby ⚡️ Wallet.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Alby ⚡️ Wallet.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CDC432A27A58FC300131398 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		4CDC433D27A58FC300131398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CDC433E27A58FC300131398 /* macExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macExtension.entitlements; sourceTree = "<group>"; };
+		4CDC434627A5941E00131398 /* Browser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Browser.swift; sourceTree = "<group>"; };
 		4CE7FADE27A3378F004E36EE /* LetsMove.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LetsMove.framework; sourceTree = "<group>"; };
 		4CE7FAE027A337AF004E36EE /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
 		4CE7FAE127A337B0004E36EE /* PFMoveApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFMoveApplication.m; path = "../../Downloads/LetsMove-master/PFMoveApplication.m"; sourceTree = "<group>"; };
 		4CE7FAE227A337B0004E36EE /* PFMoveApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMoveApplication.h; path = "../../Downloads/LetsMove-master/PFMoveApplication.h"; sourceTree = "<group>"; };
-		4CE7FAE527A337D3004E36EE /* PFMoveApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFMoveApplication.m; sourceTree = "<group>"; };
-		4CE7FAE627A337D3004E36EE /* PFMoveApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFMoveApplication.h; sourceTree = "<group>"; };
 		4CE7FAE827A33909004E36EE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -61,20 +125,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4CDC432527A58FC300131398 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		4C0CF4D2277C9BCD000DB6E3 = {
 			isa = PBXGroup;
 			children = (
+				4CDC432327A58EB900131398 /* downloader.rb */,
 				4C282998278767FE0098E172 /* README.md */,
 				4C282999278768BE0098E172 /* dark.png */,
 				4C45E96927860A2A000A394F /* alby */,
 				4C0CF4DE277C9BCE000DB6E3 /* App.swift */,
+				4CDC434627A5941E00131398 /* Browser.swift */,
 				4C45E95F277F6578000A394F /* Tests.swift */,
 				4C0CF4E2277C9BD2000DB6E3 /* Assets.xcassets */,
 				4CE7FAE227A337B0004E36EE /* PFMoveApplication.h */,
 				4CE7FAE127A337B0004E36EE /* PFMoveApplication.m */,
+				4CDC432927A58FC300131398 /* macExtension */,
 				4C0CF4DC277C9BCE000DB6E3 /* Products */,
 				4CE7FAE427A337C2004E36EE /* MoveApp */,
 				4CE7FAE727A33909004E36EE /* Frameworks */,
@@ -86,15 +160,50 @@
 			children = (
 				4C0CF4DB277C9BCE000DB6E3 /* Alby.app */,
 				4C45E95D277F6578000A394F /* Tests.xctest */,
+				4CDC432827A58FC300131398 /* Alby ⚡️ Wallet.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4CCA46BE27A5A7CF003F89BE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4CCA46C227A5A7DF003F89BE /* 4ec723a59145ea392c89.png */,
+				4CCA46CE27A5A7DF003F89BE /* 27972c37743d848a6c54.png */,
+				4CCA46CC27A5A7DF003F89BE /* assets */,
+				4CCA46C627A5A7DF003F89BE /* b27297c148a7ef314ce2.woff2 */,
+				4CCA46C527A5A7DF003F89BE /* b65534c5223684261945.woff2 */,
+				4CCA46C927A5A7DF003F89BE /* d71e545b3dda20f83904.png */,
+				4CCA46D027A5A7DF003F89BE /* ed5843bedf17127fa54b.jpg */,
+				4CCA46CB27A5A7DF003F89BE /* f16a511b73f43523b098.png */,
+				4CCA46C327A5A7DF003F89BE /* js */,
+				4CCA46CA27A5A7DF003F89BE /* manifest.json */,
+				4CCA46CD27A5A7DF003F89BE /* options.css */,
+				4CCA46CF27A5A7DF003F89BE /* options.html */,
+				4CCA46C727A5A7DF003F89BE /* popup.css */,
+				4CCA46C127A5A7DF003F89BE /* popup.html */,
+				4CCA46BF27A5A7DF003F89BE /* prompt.css */,
+				4CCA46C827A5A7DF003F89BE /* prompt.html */,
+				4CCA46C027A5A7DF003F89BE /* welcome.css */,
+				4CCA46C427A5A7DF003F89BE /* welcome.html */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4CDC432927A58FC300131398 /* macExtension */ = {
+			isa = PBXGroup;
+			children = (
+				4CCA46BE27A5A7CF003F89BE /* Resources */,
+				4CDC432A27A58FC300131398 /* SafariWebExtensionHandler.swift */,
+				4CDC433D27A58FC300131398 /* Info.plist */,
+				4CDC433E27A58FC300131398 /* macExtension.entitlements */,
+			);
+			path = macExtension;
 			sourceTree = "<group>";
 		};
 		4CE7FAE427A337C2004E36EE /* MoveApp */ = {
 			isa = PBXGroup;
 			children = (
-				4CE7FAE627A337D3004E36EE /* PFMoveApplication.h */,
-				4CE7FAE527A337D3004E36EE /* PFMoveApplication.m */,
 				4CE7FADE27A3378F004E36EE /* LetsMove.framework */,
 				4CE7FAE027A337AF004E36EE /* Bridging.h */,
 			);
@@ -119,10 +228,12 @@
 				4C0CF4D7277C9BCE000DB6E3 /* Sources */,
 				4C0CF4D8277C9BCE000DB6E3 /* Frameworks */,
 				4C0CF4D9277C9BCE000DB6E3 /* Resources */,
+				4CDC434127A58FC300131398 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4CDC434027A58FC300131398 /* PBXTargetDependency */,
 			);
 			name = Alby;
 			productName = Alby;
@@ -147,6 +258,23 @@
 			productReference = 4C45E95D277F6578000A394F /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		4CDC432727A58FC300131398 /* macExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CDC434327A58FC400131398 /* Build configuration list for PBXNativeTarget "macExtension" */;
+			buildPhases = (
+				4CDC432427A58FC300131398 /* Sources */,
+				4CDC432527A58FC300131398 /* Frameworks */,
+				4CDC432627A58FC300131398 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = macExtension;
+			productName = macExtension;
+			productReference = 4CDC432827A58FC300131398 /* Alby ⚡️ Wallet.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -165,6 +293,9 @@
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = 4C0CF4DA277C9BCE000DB6E3;
 					};
+					4CDC432727A58FC300131398 = {
+						CreatedOnToolsVersion = 13.3;
+					};
 				};
 			};
 			buildConfigurationList = 4C0CF4D6277C9BCE000DB6E3 /* Build configuration list for PBXProject "Alby" */;
@@ -182,6 +313,7 @@
 			targets = (
 				4C0CF4DA277C9BCE000DB6E3 /* Alby */,
 				4C45E95C277F6578000A394F /* Tests */,
+				4CDC432727A58FC300131398 /* macExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -203,6 +335,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4CDC432627A58FC300131398 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CCA46DA27A5A7DF003F89BE /* prompt.html in Resources */,
+				4CCA46DD27A5A7DF003F89BE /* f16a511b73f43523b098.png in Resources */,
+				4CCA46DF27A5A7DF003F89BE /* options.css in Resources */,
+				4CCA46D527A5A7DF003F89BE /* js in Resources */,
+				4CCA46E127A5A7DF003F89BE /* options.html in Resources */,
+				4CCA46D427A5A7DF003F89BE /* 4ec723a59145ea392c89.png in Resources */,
+				4CCA46D727A5A7DF003F89BE /* b65534c5223684261945.woff2 in Resources */,
+				4CCA46DC27A5A7DF003F89BE /* manifest.json in Resources */,
+				4CCA46D227A5A7DF003F89BE /* welcome.css in Resources */,
+				4CCA46D627A5A7DF003F89BE /* welcome.html in Resources */,
+				4CCA46D927A5A7DF003F89BE /* popup.css in Resources */,
+				4CCA46DE27A5A7DF003F89BE /* assets in Resources */,
+				4CCA46D327A5A7DF003F89BE /* popup.html in Resources */,
+				4CCA46E227A5A7DF003F89BE /* ed5843bedf17127fa54b.jpg in Resources */,
+				4CCA46E027A5A7DF003F89BE /* 27972c37743d848a6c54.png in Resources */,
+				4CCA46D827A5A7DF003F89BE /* b27297c148a7ef314ce2.woff2 in Resources */,
+				4CCA46DB27A5A7DF003F89BE /* d71e545b3dda20f83904.png in Resources */,
+				4CCA46D127A5A7DF003F89BE /* prompt.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -212,6 +369,7 @@
 			files = (
 				4C0CF4DF277C9BCE000DB6E3 /* App.swift in Sources */,
 				4CE7FAE327A337B0004E36EE /* PFMoveApplication.m in Sources */,
+				4CDC434727A5941E00131398 /* Browser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +381,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4CDC432427A58FC300131398 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CDC432B27A58FC300131398 /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -230,6 +396,11 @@
 			isa = PBXTargetDependency;
 			target = 4C0CF4DA277C9BCE000DB6E3 /* Alby */;
 			targetProxy = 4C45E961277F6578000A394F /* PBXContainerItemProxy */;
+		};
+		4CDC434027A58FC300131398 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4CDC432727A58FC300131398 /* macExtension */;
+			targetProxy = 4CDC433F27A58FC300131398 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -352,6 +523,7 @@
 		4C0CF4EB277C9BD2000DB6E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -383,6 +555,7 @@
 		4C0CF4EC277C9BD2000DB6E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -444,6 +617,66 @@
 			};
 			name = Release;
 		};
+		4CDC434427A58FC400131398 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = macExtension/macExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = macExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = macExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.getalby.Alby.macOS;
+				PRODUCT_NAME = "Alby ⚡️ Wallet";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		4CDC434527A58FC400131398 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = macExtension/macExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = macExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = macExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.5;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.getalby.Alby.macOS;
+				PRODUCT_NAME = "Alby ⚡️ Wallet";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -470,6 +703,15 @@
 			buildConfigurations = (
 				4C45E964277F6578000A394F /* Debug */,
 				4C45E965277F6578000A394F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CDC434327A58FC400131398 /* Build configuration list for PBXNativeTarget "macExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CDC434427A58FC400131398 /* Debug */,
+				4CDC434527A58FC400131398 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
