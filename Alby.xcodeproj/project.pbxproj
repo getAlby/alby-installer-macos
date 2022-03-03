@@ -34,7 +34,6 @@
 		4CDC434727A5941E00131398 /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC434627A5941E00131398 /* Browser.swift */; };
 		4CE7FAE327A337B0004E36EE /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE7FAE127A337B0004E36EE /* PFMoveApplication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4CE7FAE927A33909004E36EE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE7FAE827A33909004E36EE /* Security.framework */; };
-		4CE7FAEE27A34201004E36EE /* LetsMove.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE7FADE27A3378F004E36EE /* LetsMove.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,8 +102,8 @@
 		4CDC434627A5941E00131398 /* Browser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Browser.swift; sourceTree = "<group>"; };
 		4CE7FADE27A3378F004E36EE /* LetsMove.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LetsMove.framework; sourceTree = "<group>"; };
 		4CE7FAE027A337AF004E36EE /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
-		4CE7FAE127A337B0004E36EE /* PFMoveApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFMoveApplication.m; path = "../../Downloads/LetsMove-master/PFMoveApplication.m"; sourceTree = "<group>"; };
-		4CE7FAE227A337B0004E36EE /* PFMoveApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFMoveApplication.h; path = "../../Downloads/LetsMove-master/PFMoveApplication.h"; sourceTree = "<group>"; };
+		4CE7FAE127A337B0004E36EE /* PFMoveApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFMoveApplication.m; sourceTree = "<group>"; };
+		4CE7FAE227A337B0004E36EE /* PFMoveApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFMoveApplication.h; sourceTree = "<group>"; };
 		4CE7FAE827A33909004E36EE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -114,7 +113,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CE7FAE927A33909004E36EE /* Security.framework in Frameworks */,
-				4CE7FAEE27A34201004E36EE /* LetsMove.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
