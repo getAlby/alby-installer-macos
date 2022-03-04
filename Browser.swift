@@ -27,7 +27,8 @@ struct Browser: Identifiable {
         [Browser(id: "org.mozilla.firefox", appSupportFolder: "Mozilla", chrome: false),
          Browser(id: "com.google.Chrome", appSupportFolder: "Google/Chrome", chrome: true),
          Browser(id: "org.chromium.Chromium", appSupportFolder: "Chromium", chrome: true),
-         Browser(id: "com.vivaldi.Vivaldi", appSupportFolder: "Vivaldi", chrome: true)]
+         Browser(id: "com.vivaldi.Vivaldi", appSupportFolder: "Vivaldi", chrome: true),
+         Browser(id: "com.brave.Browser", appSupportFolder: "BraveSoftware/Brave-Browser", chrome: true)]
     }
 
     static var installed: [Browser] {
