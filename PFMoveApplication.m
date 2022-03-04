@@ -39,12 +39,6 @@
 	#define NSAppKitVersionNumber10_5 949
 #endif
 
-// By default, we use a small control/font for the suppression button.
-// If you prefer to use the system default (to match your other alerts),
-// set this to 0.
-#define PFUseSmallAlertSuppressCheckbox 1
-
-
 static NSString *AlertSuppressKey = @"moveToApplicationsFolderAlertSuppress";
 static BOOL MoveInProgress = NO;
 
@@ -138,12 +132,6 @@ void PFMoveToApplicationsFolderIfNecessary(void) {
 
 		// Setup suppression button
 		[alert setShowsSuppressionButton:YES];
-
-		if (PFUseSmallAlertSuppressCheckbox) {
-			NSCell *cell = [[alert suppressionButton] cell];
-			[cell setControlSize:NSSmallControlSize];
-			[cell setFont:[NSFont systemFontOfSize:[NSFont smallSystemFontSize]]];
-		}
 	}
 
 	// Activate app -- work-around for focus issues related to "scary file from internet" OS dialog.
@@ -215,7 +203,7 @@ void PFMoveToApplicationsFolderIfNecessary(void) {
 		exit(0);
 	}
 	// Save the alert suppress preference if checked
-	else if ([[alert suppressionButton] state] == NSOnState) {
+    else if ([[alert suppressionButton] state] == NSControlStateValueOn) {
 		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:AlertSuppressKey];
 	}
 
@@ -240,35 +228,7 @@ BOOL PFMoveIsInProgress() {
 #pragma mark Helper Functions
 
 static NSString *PreferredInstallLocation(BOOL *isUserDirectory) {
-	// Return the preferred install location.
-	// Assume that if the user has a ~/Applications folder, they'd prefer their
-	// applications to go there.
-
-	NSFileManager *fm = [NSFileManager defaultManager];
-
-	NSArray *userApplicationsDirs = NSSearchPathForDirectoriesInDomains(NSApplicationDirectory, NSUserDomainMask, YES);
-
-	if ([userApplicationsDirs count] > 0) {
-		NSString *userApplicationsDir = [userApplicationsDirs objectAtIndex:0];
-		BOOL isDirectory;
-
-		if ([fm fileExistsAtPath:userApplicationsDir isDirectory:&isDirectory] && isDirectory) {
-			// User Applications directory exists. Get the directory contents.
-			NSArray *contents = [fm contentsOfDirectoryAtPath:userApplicationsDir error:NULL];
-
-			// Check if there is at least one ".app" inside the directory.
-			for (NSString *contentsPath in contents) {
-				if ([[contentsPath pathExtension] isEqualToString:@"app"]) {
-					if (isUserDirectory) *isUserDirectory = YES;
-					return [userApplicationsDir stringByResolvingSymlinksInPath];
-				}
-			}
-		}
-	}
-
-	// No user Applications directory in use. Return the machine local Applications directory
-	if (isUserDirectory) *isUserDirectory = NO;
-
+    *isUserDirectory = NO;
 	return [[NSSearchPathForDirectoriesInDomains(NSApplicationDirectory, NSLocalDomainMask, YES) lastObject] stringByResolvingSymlinksInPath];
 }
 
