@@ -227,6 +227,7 @@
 				4C0CF4D8277C9BCE000DB6E3 /* Frameworks */,
 				4C0CF4D9277C9BCE000DB6E3 /* Resources */,
 				4CDC434127A58FC300131398 /* Embed App Extensions */,
+				B7A795AA27D2574100F2E54B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -359,6 +360,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B7A795AA27D2574100F2E54B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/sh ";
+			shellScript = "\nif [ \"${CONFIGURATION}\" = \"Release\" ]; then\n cd $SRCROOT\n codesign -s \"Apple Distribution: Michael Bumann (ML5FQ3XLR4)\" --deep -v -f -o runtime alby\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4C0CF4D7277C9BCE000DB6E3 /* Sources */ = {
