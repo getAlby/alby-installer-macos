@@ -51,9 +51,11 @@ struct Window: App {
                         Text("Lightning buzz for your Browser")
                             .font(Font.system(size: 24.0, weight: .bold))
                         Spacer().frame(height: 4.0)
-                        Text("Alby brings Bitcoin to the web with in-browser payments and identity, no account required.")
+                        Text("Alby brings Bitcoin payments to the web with in-browser payments and identity, all with your own wallet.\n Install Alby for you browser and use Alby directly in your browser.")
                             .font(Font.system(size: 14.0, weight: .regular))
                             .foregroundColor(Color.primary.opacity(0.7))
+                        
+                        
                     }.multilineTextAlignment(.center)
                        
                     Spacer().frame(height: 16.0)
@@ -64,6 +66,13 @@ struct Window: App {
                         }
                     }
                     
+                    VStack {
+                        VStack {
+                            Spacer().frame(height: 16.0)
+                            Text("(You can close this app after installation, but keep it in you Applications folder.)")
+                                .font(Font.system(size: 12.0, weight: .regular))
+                                .foregroundColor(Color.primary.opacity(0.6))
+                        }}
                     Spacer().frame(height: 60.0)
                 }
             }
@@ -95,8 +104,9 @@ struct Window: App {
     }
 
     private func seek() {
-        browsers = [Browser(id: "com.apple.Safari", appSupportFolder: nil, chrome: nil)] + Browser.installed
-        checkIfIsEnabledForSafari()
+        // browsers = [Browser(id: "com.apple.Safari", appSupportFolder: nil, chrome: nil)] + Browser.installed
+        browsers = Browser.installed
+        // checkIfIsEnabledForSafari()
     }
 
     private var columns: Int {
