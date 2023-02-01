@@ -12,7 +12,7 @@
 		4C45E9672780F1E0000A394F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C45E95F277F6578000A394F /* Tests.swift */; };
 		4C45E96A27860A2B000A394F /* alby in Resources */ = {isa = PBXBuildFile; fileRef = 4C45E96927860A2A000A394F /* alby */; };
 		4CDC432B27A58FC300131398 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC432A27A58FC300131398 /* SafariWebExtensionHandler.swift */; };
-		4CDC434227A58FC400131398 /* AlbyExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4CDC432827A58FC300131398 /* AlbyExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4CDC434227A58FC400131398 /* AlbyExt.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4CDC432827A58FC300131398 /* AlbyExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4CDC434727A5941E00131398 /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC434627A5941E00131398 /* Browser.swift */; };
 		4CE54223298B206D00F65ABF /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 4CE54222298B206D00F65ABF /* Resources */; };
 		4CE7FAE327A337B0004E36EE /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE7FAE127A337B0004E36EE /* PFMoveApplication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -37,15 +37,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4CDC434127A58FC300131398 /* Embed App Extensions */ = {
+		4CDC434127A58FC300131398 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				4CDC434227A58FC400131398 /* AlbyExt.appex in Embed App Extensions */,
+				4CDC434227A58FC400131398 /* AlbyExt.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -167,7 +167,7 @@
 				4C0CF4D7277C9BCE000DB6E3 /* Sources */,
 				4C0CF4D8277C9BCE000DB6E3 /* Frameworks */,
 				4C0CF4D9277C9BCE000DB6E3 /* Resources */,
-				4CDC434127A58FC300131398 /* Embed App Extensions */,
+				4CDC434127A58FC300131398 /* Embed Foundation Extensions */,
 				B7A795AA27D2574100F2E54B /* ShellScript */,
 			);
 			buildRules = (
@@ -223,7 +223,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					4C0CF4DA277C9BCE000DB6E3 = {
 						CreatedOnToolsVersion = 13.2;
@@ -382,6 +382,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -443,6 +444,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -470,9 +472,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ML5FQ3XLR4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -506,9 +510,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ML5FQ3XLR4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -540,6 +546,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.1;
 				MARKETING_VERSION = 1.0;
@@ -557,6 +564,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.1;
 				MARKETING_VERSION = 1.0;
@@ -572,8 +580,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = macExtension/macExtension.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ML5FQ3XLR4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -603,8 +613,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = macExtension/macExtension.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = ML5FQ3XLR4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
