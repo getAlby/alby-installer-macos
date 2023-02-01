@@ -41,7 +41,8 @@ struct Window: App {
         WindowGroup {
             ZStack {
                 Color("Background")
-                
+                    .edgesIgnoringSafeArea(.all)
+
                 VStack {
                     VStack {
                         Spacer().frame(height: 32.0)
@@ -77,7 +78,7 @@ struct Window: App {
                 }
             }
             .navigationTitle("Alby")
-            .frame(width: (CGFloat(columns) * 213.0) + (CGFloat(columns - 1) * 40.0) + 78.0, height: 570.0)
+            .frame(minWidth: (CGFloat(columns) * 213.0) + (CGFloat(columns - 1) * 40.0) + 78.0, minHeight: 570.0)
             .alert(isPresented: .constant(localizedError?.isEmpty == false)) {
                 Alert(title: Text(localizedError!))
             }
