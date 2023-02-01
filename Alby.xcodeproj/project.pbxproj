@@ -14,6 +14,7 @@
 		4CDC432B27A58FC300131398 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC432A27A58FC300131398 /* SafariWebExtensionHandler.swift */; };
 		4CDC434227A58FC400131398 /* AlbyExt.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4CDC432827A58FC300131398 /* AlbyExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4CDC434727A5941E00131398 /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC434627A5941E00131398 /* Browser.swift */; };
+		4CE54223298B206D00F65ABF /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 4CE54222298B206D00F65ABF /* Resources */; };
 		4CE7FAE327A337B0004E36EE /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE7FAE127A337B0004E36EE /* PFMoveApplication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4CE7FAE927A33909004E36EE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE7FAE827A33909004E36EE /* Security.framework */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		4CDC433D27A58FC300131398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CDC433E27A58FC300131398 /* macExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macExtension.entitlements; sourceTree = "<group>"; };
 		4CDC434627A5941E00131398 /* Browser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Browser.swift; sourceTree = "<group>"; };
+		4CE54222298B206D00F65ABF /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 		4CE7FADE27A3378F004E36EE /* LetsMove.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LetsMove.framework; sourceTree = "<group>"; };
 		4CE7FAE027A337AF004E36EE /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
 		4CE7FAE127A337B0004E36EE /* PFMoveApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFMoveApplication.m; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		4CDC432927A58FC300131398 /* macExtension */ = {
 			isa = PBXGroup;
 			children = (
+				4CE54222298B206D00F65ABF /* Resources */,
 				4CDC432A27A58FC300131398 /* SafariWebExtensionHandler.swift */,
 				4CDC433D27A58FC300131398 /* Info.plist */,
 				4CDC433E27A58FC300131398 /* macExtension.entitlements */,
@@ -276,6 +279,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CE54223298B206D00F65ABF /* Resources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
