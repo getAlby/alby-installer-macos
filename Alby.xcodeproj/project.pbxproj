@@ -11,11 +11,14 @@
 		4C0CF4E3277C9BD2000DB6E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C0CF4E2277C9BD2000DB6E3 /* Assets.xcassets */; };
 		4C45E9672780F1E0000A394F /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C45E95F277F6578000A394F /* Tests.swift */; };
 		4C45E96A27860A2B000A394F /* alby in Resources */ = {isa = PBXBuildFile; fileRef = 4C45E96927860A2A000A394F /* alby */; };
-		4CDC432B27A58FC300131398 /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC432A27A58FC300131398 /* SafariWebExtensionHandler.swift */; };
-		4CDC434227A58FC400131398 /* AlbyExt.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4CDC432827A58FC300131398 /* AlbyExt.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		4CDC434727A5941E00131398 /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC434627A5941E00131398 /* Browser.swift */; };
-		4CE54223298B206D00F65ABF /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 4CE54222298B206D00F65ABF /* Resources */; };
-		4CE7FAE327A337B0004E36EE /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE7FAE127A337B0004E36EE /* PFMoveApplication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4C56D9DF298BA58C0081EF8C /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C56D95F298BA58C0081EF8C /* SafariWebExtensionHandler.swift */; };
+		4C56D9E0298BA58C0081EF8C /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C56D95F298BA58C0081EF8C /* SafariWebExtensionHandler.swift */; };
+		4C56DAD3298BA5AA0081EF8C /* Alby Web Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4C56D93A298BA4CC0081EF8C /* Alby Web Extension.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4C56DAE4298C0C180081EF8C /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 4C56DAE3298C0C180081EF8C /* Resources */; };
+		4C56DAE5298C0C190081EF8C /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 4C56DAE3298C0C180081EF8C /* Resources */; };
+		4CDC434227A58FC400131398 /* AlbyMacExt.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4CDC432827A58FC300131398 /* AlbyMacExt.appex */; platformFilters = (macos, ); settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4CDC434727A5941E00131398 /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDC434627A5941E00131398 /* Browser.swift */; platformFilters = (macos, ); };
+		4CE7FAE327A337B0004E36EE /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE7FAE127A337B0004E36EE /* PFMoveApplication.m */; platformFilters = (macos, ); settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4CE7FAE927A33909004E36EE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE7FAE827A33909004E36EE /* Security.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +29,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4C0CF4DA277C9BCE000DB6E3;
 			remoteInfo = Alby;
+		};
+		4C56DAD4298BA6760081EF8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C0CF4D3277C9BCD000DB6E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C56D939298BA4CC0081EF8C;
+			remoteInfo = iExtension;
 		};
 		4CDC433F27A58FC300131398 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -43,7 +53,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				4CDC434227A58FC400131398 /* AlbyExt.appex in Embed Foundation Extensions */,
+				4C56DAD3298BA5AA0081EF8C /* Alby Web Extension.appex in Embed Foundation Extensions */,
+				4CDC434227A58FC400131398 /* AlbyMacExt.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,16 +67,17 @@
 		4C0CF4E2277C9BD2000DB6E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C282998278767FE0098E172 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4C282999278768BE0098E172 /* dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dark.png; sourceTree = "<group>"; };
+		4C393D49298C334700E7FABA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Extension/Info.plist; sourceTree = "<group>"; };
 		4C45E95D277F6578000A394F /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C45E95F277F6578000A394F /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		4C45E96927860A2A000A394F /* alby */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = alby; sourceTree = "<group>"; };
+		4C56D93A298BA4CC0081EF8C /* Alby Web Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Alby Web Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C56D95F298BA58C0081EF8C /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		4C56DAE3298C0C180081EF8C /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 		4CDC432327A58EB900131398 /* downloader.rb */ = {isa = PBXFileReference; lastKnownFileType = text.script.ruby; path = downloader.rb; sourceTree = "<group>"; };
-		4CDC432827A58FC300131398 /* AlbyExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AlbyExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CDC432A27A58FC300131398 /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
-		4CDC433D27A58FC300131398 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CDC432827A58FC300131398 /* AlbyMacExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AlbyMacExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CDC433E27A58FC300131398 /* macExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macExtension.entitlements; sourceTree = "<group>"; };
 		4CDC434627A5941E00131398 /* Browser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Browser.swift; sourceTree = "<group>"; };
-		4CE54222298B206D00F65ABF /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 		4CE7FADE27A3378F004E36EE /* LetsMove.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LetsMove.framework; sourceTree = "<group>"; };
 		4CE7FAE027A337AF004E36EE /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
 		4CE7FAE127A337B0004E36EE /* PFMoveApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFMoveApplication.m; sourceTree = "<group>"; };
@@ -83,6 +95,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4C45E95A277F6578000A394F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C56D937298BA4CC0081EF8C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -112,7 +131,10 @@
 				4C0CF4E2277C9BD2000DB6E3 /* Assets.xcassets */,
 				4CE7FAE227A337B0004E36EE /* PFMoveApplication.h */,
 				4CE7FAE127A337B0004E36EE /* PFMoveApplication.m */,
-				4CDC432927A58FC300131398 /* macExtension */,
+				4CDC433E27A58FC300131398 /* macExtension.entitlements */,
+				4C56D95F298BA58C0081EF8C /* SafariWebExtensionHandler.swift */,
+				4C393D49298C334700E7FABA /* Info.plist */,
+				4C56DAE3298C0C180081EF8C /* Resources */,
 				4C0CF4DC277C9BCE000DB6E3 /* Products */,
 				4CE7FAE427A337C2004E36EE /* MoveApp */,
 				4CE7FAE727A33909004E36EE /* Frameworks */,
@@ -124,20 +146,10 @@
 			children = (
 				4C0CF4DB277C9BCE000DB6E3 /* Alby.app */,
 				4C45E95D277F6578000A394F /* Tests.xctest */,
-				4CDC432827A58FC300131398 /* AlbyExt.appex */,
+				4CDC432827A58FC300131398 /* AlbyMacExt.appex */,
+				4C56D93A298BA4CC0081EF8C /* Alby Web Extension.appex */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		4CDC432927A58FC300131398 /* macExtension */ = {
-			isa = PBXGroup;
-			children = (
-				4CE54222298B206D00F65ABF /* Resources */,
-				4CDC432A27A58FC300131398 /* SafariWebExtensionHandler.swift */,
-				4CDC433D27A58FC300131398 /* Info.plist */,
-				4CDC433E27A58FC300131398 /* macExtension.entitlements */,
-			);
-			path = macExtension;
 			sourceTree = "<group>";
 		};
 		4CE7FAE427A337C2004E36EE /* MoveApp */ = {
@@ -173,6 +185,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4C56DAD5298BA6760081EF8C /* PBXTargetDependency */,
 				4CDC434027A58FC300131398 /* PBXTargetDependency */,
 			);
 			name = Alby;
@@ -198,6 +211,23 @@
 			productReference = 4C45E95D277F6578000A394F /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		4C56D939298BA4CC0081EF8C /* iExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C56D954298BA4CD0081EF8C /* Build configuration list for PBXNativeTarget "iExtension" */;
+			buildPhases = (
+				4C56D936298BA4CC0081EF8C /* Sources */,
+				4C56D937298BA4CC0081EF8C /* Frameworks */,
+				4C56D938298BA4CC0081EF8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iExtension;
+			productName = "iExtension Extension";
+			productReference = 4C56D93A298BA4CC0081EF8C /* Alby Web Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		4CDC432727A58FC300131398 /* macExtension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CDC434327A58FC400131398 /* Build configuration list for PBXNativeTarget "macExtension" */;
@@ -212,7 +242,7 @@
 			);
 			name = macExtension;
 			productName = macExtension;
-			productReference = 4CDC432827A58FC300131398 /* AlbyExt.appex */;
+			productReference = 4CDC432827A58FC300131398 /* AlbyMacExt.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -222,7 +252,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					4C0CF4DA277C9BCE000DB6E3 = {
@@ -232,6 +262,9 @@
 					4C45E95C277F6578000A394F = {
 						CreatedOnToolsVersion = 13.2.1;
 						TestTargetID = 4C0CF4DA277C9BCE000DB6E3;
+					};
+					4C56D939298BA4CC0081EF8C = {
+						CreatedOnToolsVersion = 14.2;
 					};
 					4CDC432727A58FC300131398 = {
 						CreatedOnToolsVersion = 13.3;
@@ -254,6 +287,7 @@
 				4C0CF4DA277C9BCE000DB6E3 /* Alby */,
 				4C45E95C277F6578000A394F /* Tests */,
 				4CDC432727A58FC300131398 /* macExtension */,
+				4C56D939298BA4CC0081EF8C /* iExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -275,11 +309,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4C56D938298BA4CC0081EF8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C56DAE5298C0C190081EF8C /* Resources in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4CDC432627A58FC300131398 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CE54223298B206D00F65ABF /* Resources in Resources */,
+				4C56DAE4298C0C180081EF8C /* Resources in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,11 +367,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4C56D936298BA4CC0081EF8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C56D9E0298BA58C0081EF8C /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4CDC432427A58FC300131398 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CDC432B27A58FC300131398 /* SafariWebExtensionHandler.swift in Sources */,
+				4C56D9DF298BA58C0081EF8C /* SafariWebExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,8 +391,17 @@
 			target = 4C0CF4DA277C9BCE000DB6E3 /* Alby */;
 			targetProxy = 4C45E961277F6578000A394F /* PBXContainerItemProxy */;
 		};
+		4C56DAD5298BA6760081EF8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 4C56D939298BA4CC0081EF8C /* iExtension */;
+			targetProxy = 4C56DAD4298BA6760081EF8C /* PBXContainerItemProxy */;
+		};
 		4CDC434027A58FC300131398 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilters = (
+				macos,
+			);
 			target = 4CDC432727A58FC300131398 /* macExtension */;
 			targetProxy = 4CDC433F27A58FC300131398 /* PBXContainerItemProxy */;
 		};
@@ -496,10 +555,14 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.getalby.Alby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = MoveApp/Bridging.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -533,9 +596,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.getalby.Alby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = MoveApp/Bridging.h;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -573,10 +640,69 @@
 			};
 			name = Release;
 		};
+		4C56D955298BA4CD0081EF8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.getalby.Alby.webExtension;
+				PRODUCT_NAME = "Alby Web Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4C56D956298BA4CD0081EF8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.getalby.Alby.webExtension;
+				PRODUCT_NAME = "Alby Web Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		4CDC434427A58FC400131398 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = macExtension/macExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = macExtension.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
@@ -584,9 +710,7 @@
 				DEVELOPMENT_TEAM = ML5FQ3XLR4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = macExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = macExtension;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -597,8 +721,8 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.getalby.Alby.macOS;
-				PRODUCT_NAME = AlbyExt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.getalby.Alby.webExtension;
+				PRODUCT_NAME = AlbyMacExt;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -608,7 +732,7 @@
 		4CDC434527A58FC400131398 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = macExtension/macExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = macExtension.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
@@ -616,9 +740,7 @@
 				DEVELOPMENT_TEAM = ML5FQ3XLR4;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = macExtension/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = macExtension;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -629,8 +751,8 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.getalby.Alby.macOS;
-				PRODUCT_NAME = AlbyExt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.getalby.Alby.webExtension;
+				PRODUCT_NAME = AlbyMacExt;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -663,6 +785,15 @@
 			buildConfigurations = (
 				4C45E964277F6578000A394F /* Debug */,
 				4C45E965277F6578000A394F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C56D954298BA4CD0081EF8C /* Build configuration list for PBXNativeTarget "iExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C56D955298BA4CD0081EF8C /* Debug */,
+				4C56D956298BA4CD0081EF8C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

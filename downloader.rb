@@ -33,4 +33,4 @@ asset = release["assets"].find {|asset|
 
 url = asset['browser_download_url']
 
-Kernel.system "curl -L -o alby-chrome.zip #{url} && unzip alby-chrome.zip -d macExtension/Resources"
+Kernel.system "curl -L -o alby-chrome.zip #{url} && unzip alby-chrome.zip -d Extension"

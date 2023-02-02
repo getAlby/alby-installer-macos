@@ -1,6 +1,7 @@
+#if canImport(AppKit)
 import AppKit
 
-let safariExtensionBundleIdentifier = "com.getalby.Alby.macOS"
+let safariExtensionBundleIdentifier = "com.getalby.Alby.webExtension"
 
 struct Browser: Identifiable {
     let id: String
@@ -100,3 +101,4 @@ struct Browser: Identifiable {
         return nil
     }
 }
+#endif
