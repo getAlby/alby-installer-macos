@@ -69,15 +69,15 @@ struct Window: App {
     
     @ViewBuilder
     func view(for browser: Browser) -> some View {
-        VStack(spacing: 16.0) {
+        VStack(spacing: 16) {
             ZStack {
-                Color(red: 1.00, green: 0.98, blue: 0.93)
+                Color(red: 10, green: 0.98, blue: 0.93)
                 
                 if let icon = browser.icon {
                     ZStack {
                         Image(nsImage: icon)
                             .resizable()
-                            .frame(width: 150.0, height: 150.0)
+                            .frame(width: 150, height: 150)
                         if let installed = browser.companionInstalled {
                             if installed { checkmark }
                         } else {
@@ -88,8 +88,8 @@ struct Window: App {
                     }
                 }
             }
-            .frame(width: 213.0, height: 213.0)
-            .cornerRadius(16.0)
+            .frame(width: 213, height: 213)
+            .cornerRadius(16)
             
             Button {
                 if browser.chrome == nil {
@@ -158,15 +158,16 @@ struct Window: App {
                 Color("Background")
                 VStack {
                     VStack {
-                        Spacer().frame(height: 32.0)
+                        Spacer().frame(height: 64)
                         Image("logo")
-                            .frame(width: 120.0)
-                        Spacer().frame(height: 24.0)
+                            .frame(width: 120)
+                        Spacer().frame(height: 24)
                         Text("Lightning buzz for your Browser")
-                            .font(Font.system(size: 24.0, weight: .bold))
-                        Spacer().frame(height: 4.0)
+                            .font(Font.system(size: 24, weight: .bold))
+                        Spacer().frame(height: 4)
                         VStack {
                             Text("Alby brings Bitcoin payments to the web with in-browser payments and identity, all with your own wallet.")
+                                .padding()
 #if os(iOS)
                             Button {
                                 if let url = URL(string:UIApplication.openSettingsURLString) {
@@ -175,23 +176,22 @@ struct Window: App {
                                      }
                                   }
                             } label: {
-                                Text("Activate Alby in Settings > Safari > Extension")
-                                    .font(.largeTitle)
+                                Text("How to Activate Alby?\nSettings > Safari > Extension")
                                     .padding()
                             }
 #else
                             Text("Install Alby for you browser and use Alby directly in your browser.")
 #endif
                         }
-                            .font(Font.system(size: 14.0, weight: .regular))
+                            .font(Font.system(size: 14, weight: .regular))
                             .foregroundColor(Color.primary.opacity(0.7))
                         
                         
                     }.multilineTextAlignment(.center)
                     
-                    Spacer().frame(height: 16.0)
+                    Spacer().frame(height: 16)
                     
-                    HStack(spacing: 40.0) {
+                    HStack(spacing: 40) {
 #if os(macOS)
                         ForEach(browsers) {
                             view(for: $0)
@@ -200,19 +200,18 @@ struct Window: App {
                     }
 #if os(macOS)
                     VStack {
-                        VStack {
-                            Spacer().frame(height: 16.0)
-                            Text("(You can close this app after installation, but keep it in you Applications folder.)")
-                                .font(Font.system(size: 12.0, weight: .regular))
-                                .foregroundColor(Color.primary.opacity(0.6))
-                        }}
-                    Spacer().frame(height: 60.0)
+                        Spacer().frame(height: 16)
+                        Text("(You can close this app after installation, but keep it in you Applications folder.)")
+                            .font(Font.system(size: 12, weight: .regular))
+                            .foregroundColor(Color.primary.opacity(0.6))
+                    }
+                    Spacer().frame(height: 60)
 #endif
                 }
                 .padding()
             }
             .navigationTitle("Alby")
-            .frame(minWidth: (CGFloat(columns) * 213.0) + (CGFloat(columns - 1) * 40.0) + 78.0, minHeight: 540.0)
+            .frame(minWidth: (CGFloat(columns) * 213) + (CGFloat(columns - 1) * 40) + 78, minHeight: 570)
             .alert(isPresented: .constant(localizedError?.isEmpty == false)) {
                 Alert(title: Text(localizedError!))
             }

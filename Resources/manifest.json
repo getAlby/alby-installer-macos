@@ -1,7 +1,7 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Alby - Bitcoin Lightning Wallet",
-  "version": "1.24.0",
+  "version": "1.22.1",
   "icons": {
     "16": "assets/icons/alby_icon_yellow_16x16.png",
     "32": "assets/icons/alby_icon_yellow_32x32.png",
@@ -11,23 +11,34 @@
   "description": "The Bitcoin Lightning wallet for direct payments across the globe, Bitcoin Lightning applications and passwordless logins.",
   "homepage_url": "https://getAlby.com/",
   "web_accessible_resources": [
-    "js/inpageScript.bundle.js",
-    "js/inpageScriptWebLN.bundle.js",
-    "js/inpageScriptNostr.bundle.js"
+    {
+      "resources": [
+        "js/inpageScript.bundle.js",
+        "js/inpageScriptWebLN.bundle.js",
+        "js/inpageScriptNostr.bundle.js"
+      ],
+      "matches": [
+        "https://*/*"
+      ]
+    }
   ],
   "permissions": [
-    "notifications",
     "activeTab",
-    "tabs",
-    "storage",
-    "unlimitedStorage",
     "nativeMessaging",
+    "notifications",
+    "storage",
+    "tabs",
+    "unlimitedStorage"
+  ],
+  "host_permissions": [
     "*://*/*"
   ],
-  "content_security_policy": "script-src 'self'; object-src 'self'",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
   "author": "Alby",
-  "minimum_chrome_version": "49",
-  "browser_action": {
+  "minimum_chrome_version": "88",
+  "action": {
     "default_popup": "popup.html",
     "default_icon": {
       "16": "assets/icons/alby_icon_yellow_16x16.png",
@@ -57,8 +68,7 @@
         "size": 128
       }
     ],
-    "default_title": "Alby - Bitcoin Lightning Wallet",
-    "chrome_style": false
+    "default_title": "Alby - Bitcoin Lightning Wallet"
   },
   "commands": {
     "_execute_browser_action": {
@@ -69,14 +79,10 @@
   },
   "options_ui": {
     "page": "options.html",
-    "open_in_tab": true,
-    "chrome_style": false
+    "open_in_tab": true
   },
   "background": {
-    "scripts": [
-      "js/background.bundle.js"
-    ],
-    "persistent": true
+    "service_worker": "js/background.bundle.js"
   },
   "content_scripts": [
     {
