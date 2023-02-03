@@ -176,8 +176,20 @@ struct Window: App {
                                      }
                                   }
                             } label: {
-                                Text("How to Activate Alby?\nSettings > Safari > Extension")
-                                    .padding()
+                                VStack {
+                                    Text("How to Activate Alby?")
+                                    Button {
+                                        if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                                            UIApplication.shared.open(settingsURL as URL)
+                                        }
+                                    } label: {
+                                        Text("Settings > Safari > Extension")
+                                            .foregroundColor(Color.accentColor)
+                                            .bold()
+                                    }
+
+                                }
+                                .padding()
                             }
 #else
                             Text("Install Alby for you browser and use Alby directly in your browser.")
