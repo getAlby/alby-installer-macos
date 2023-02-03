@@ -1,13 +1,14 @@
-# Alby macOS App & Installer
+# Alby macOS App & Installer + Alby iOS
 
-This is the Extension and Companion Installer for **[Alby](http://getalby.com)**, as well as the Safari Extension Installer
-![](light.png)
+This is the Extension and Companion Installer for **[Alby](http://getalby.com)**, as well as the Safari Extension Installer  
+![](img/light.png)  
+![](img/iOS-App.png)![](img/iOS-Settings.png)![](img/iOS-Ext.png)
 
-## Usage for Safari
+## [Mac] Usage for Safari
 
 Clicking `Enable` or `Disable` will show the Safari Settings and you can take action
 
-## Usage for Firefox/Chrome/Chromium/Vivaldi
+## [Mac] Usage for Firefox/Chrome/Chromium/Vivaldi
 
 1. Clicking `Install` will copy `alby.json` into the `NativeMessagingHosts` folder in your `Libary/Application Support` for the browser and open the browser with the extension's URL which will install it.
 2. Clicking `Remove` will delete `alby.json` from browser folder.
