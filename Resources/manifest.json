@@ -1,40 +1,30 @@
 {
   "manifest_version": 3,
-  "name": "Alby - Bitcoin Lightning Wallet",
-  "version": "1.22.1",
+  "name": "Alby - Bitcoin Wallet for Lightning & Nostr",
+  "version": "3.6.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAludn9UxTx8rcLh5LfGjqd9/W+yDDlz1h9GlrrUCzyZouU3tQ3BkXgRNWZVqWUwalvR6DUin2ECu/QTMipsl5fZg36U9HCL6sMOP0MwfDzOPWTQnaKj0AGLvWloFOD7qmIFT+HOlVBcXVCxCbx85LMsHh8mbh5u5mTPBLXKjxSAx5pvGsCHKJ/45zkRxxiF4GorbxAOBEYPUC6m3UpPOLgVQUPYJrQF7mvAgKl/1pd68sdvSc3ragsFNw8IK5/fK1oD6ZV/n1uvpFrlqHF7Ed+OE3eAVkdCSxxiTJnwMfS4duE4QOLfP2cYeriZKBtdkgdQUVrY+Y++R3C85Cdhdz6wIDAQAB",
   "icons": {
     "16": "assets/icons/alby_icon_yellow_16x16.png",
     "32": "assets/icons/alby_icon_yellow_32x32.png",
     "48": "assets/icons/alby_icon_yellow_48x48.png",
     "128": "assets/icons/alby_icon_yellow_128x128.png"
   },
-  "description": "The Bitcoin Lightning wallet for direct payments across the globe, Bitcoin Lightning applications and passwordless logins.",
+  "description": "Your Bitcoin Lightning wallet and companion for accessing Bitcoin and Nostr apps, digital payments and passwordless logins.",
   "homepage_url": "https://getAlby.com/",
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "js/inpageScript.bundle.js",
-        "js/inpageScriptWebLN.bundle.js",
-        "js/inpageScriptNostr.bundle.js"
-      ],
-      "matches": [
-        "https://*/*"
-      ]
-    }
-  ],
   "permissions": [
-    "activeTab",
     "nativeMessaging",
     "notifications",
+    "scripting",
     "storage",
     "tabs",
-    "unlimitedStorage"
+    "unlimitedStorage",
+    "identity"
   ],
   "host_permissions": [
     "*://*/*"
   ],
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'"
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
   },
   "author": "Alby",
   "minimum_chrome_version": "88",
@@ -68,10 +58,10 @@
         "size": 128
       }
     ],
-    "default_title": "Alby - Bitcoin Lightning Wallet"
+    "default_title": "Alby - Bitcoin Wallet for Lightning & Nostr"
   },
   "commands": {
-    "_execute_browser_action": {
+    "_execute_action": {
       "suggested_key": {
         "default": "Alt+Shift+A"
       }
@@ -90,20 +80,14 @@
       "matches": [
         "*://*/*"
       ],
-      "run_at": "document_end",
-      "js": [
-        "js/contentScriptOnEnd.bundle.js",
-        "js/contentScriptOnEndNostr.bundle.js"
-      ]
-    },
-    {
-      "all_frames": true,
-      "matches": [
-        "*://*/*"
-      ],
       "run_at": "document_start",
       "js": [
-        "js/contentScriptOnStart.bundle.js"
+        "js/contentScriptOnStart.bundle.js",
+        "js/contentScriptWebLN.bundle.js",
+        "js/contentScriptAlby.bundle.js",
+        "js/contentScriptLiquid.bundle.js",
+        "js/contentScriptNostr.bundle.js",
+        "js/contentScriptWebBTC.bundle.js"
       ]
     }
   ]
