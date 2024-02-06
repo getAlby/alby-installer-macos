@@ -187,7 +187,6 @@ struct Window: App {
                                             .foregroundColor(Color.accentColor)
                                             .bold()
                                     }
-
                                 }
                                 .padding()
                             }
@@ -197,8 +196,6 @@ struct Window: App {
                         }
                             .font(Font.system(size: 14, weight: .regular))
                             .foregroundColor(Color.primary.opacity(0.7))
-                        
-                        
                     }.multilineTextAlignment(.center)
                     
                     Spacer().frame(height: 16)
@@ -236,7 +233,7 @@ struct Window: App {
 #endif
             }
         }
-        .onChange(of: scenePhase) { _ in
+        .onChange(of: scenePhase) {
 #if os(macOS)
             checkIfIsEnabledForSafari()
 #endif
