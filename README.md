@@ -23,6 +23,6 @@ Build App:
 2. Open `Alby.xcodeproj`, press: `Product` -> `Archive` -> `Distribute App`.
 3. Select appropriate signing and distribution options and generate `Alby.app` bundle.
 
-⚠️ Both the `alby` Rust companion (for other browsers) and the Safari Web Extension code will be Red in Xcode if not downloaded.
+⚠️ Both the `alby` Rust companion (for other browsers than Safari) and the Safari Web Extension code will be Red in Xcode if not downloaded.
 
 👋 Author: [StuFF mc](https://github.com/stuffmc)
