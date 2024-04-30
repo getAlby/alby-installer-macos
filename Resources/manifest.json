@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Alby - Bitcoin Wallet for Lightning & Nostr",
+  "name": "Alby Web Extension",
   "version": "3.7.0",
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAludn9UxTx8rcLh5LfGjqd9/W+yDDlz1h9GlrrUCzyZouU3tQ3BkXgRNWZVqWUwalvR6DUin2ECu/QTMipsl5fZg36U9HCL6sMOP0MwfDzOPWTQnaKj0AGLvWloFOD7qmIFT+HOlVBcXVCxCbx85LMsHh8mbh5u5mTPBLXKjxSAx5pvGsCHKJ/45zkRxxiF4GorbxAOBEYPUC6m3UpPOLgVQUPYJrQF7mvAgKl/1pd68sdvSc3ragsFNw8IK5/fK1oD6ZV/n1uvpFrlqHF7Ed+OE3eAVkdCSxxiTJnwMfS4duE4QOLfP2cYeriZKBtdkgdQUVrY+Y++R3C85Cdhdz6wIDAQAB",
   "icons": {
@@ -9,7 +9,7 @@
     "48": "assets/icons/alby_icon_yellow_48x48.png",
     "128": "assets/icons/alby_icon_yellow_128x128.png"
   },
-  "description": "Your Bitcoin Lightning wallet and companion for accessing Bitcoin and Nostr apps, digital payments and passwordless logins.",
+  "description": "Your Bitcoin Lightning wallet and companion for accessing Bitcoin and Nostr apps & digital payments.",
   "homepage_url": "https://getAlby.com/",
   "permissions": [
     "nativeMessaging",

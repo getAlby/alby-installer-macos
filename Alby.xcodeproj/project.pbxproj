@@ -900,10 +900,10 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.getalby.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.getalby.extension.iOS;
 				PRODUCT_NAME = "Alby Web Extension";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "com.getalby.extension Alby Extension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "com.getalby.extension Alby Extension iOS";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -934,10 +934,10 @@
 					"-framework",
 					SafariServices,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.getalby.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.getalby.extension.iOS;
 				PRODUCT_NAME = "Alby Web Extension";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "com.getalby.extension Alby Extension";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "com.getalby.extension Alby Extension iOS";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
